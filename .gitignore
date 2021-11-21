@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# mysql workbench
+database_model/model.mwb.bak
