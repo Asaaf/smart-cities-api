@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "provinces",
   "info": {
-    "name": "provinces"
+    "name": "provinces",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -15,6 +16,9 @@
       "type": "string",
       "required": true,
       "maxLength": 100
+    },
+    "country_id": {
+      "model": "countries"
     }
   }
 }

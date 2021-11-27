@@ -527,6 +527,29 @@
             "type": "string",
             "maxLength": 100
           },
+          "country_id": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -541,6 +564,9 @@
           "name": {
             "type": "string",
             "maxLength": 100
+          },
+          "country_id": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
