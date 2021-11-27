@@ -10,4 +10,16 @@
  * See more details here: https://strapi.io/documentation/developer-docs/latest/setup-deployment-guides/configurations.html#bootstrap
  */
 
-module.exports = () => {};
+module.exports = async () => {
+    const knex = strapi.connections.default;
+    // provinces foreign key
+    if (!existsForeignKey(knex, 'provinces', 'country_id')) {
+        await knex.schema.alterTable('provinces', t => {
+            t.integer('country_id').unsigned().notNullable().references('countries.id').onDelete('cascade').alter();
+        });
+    }
+  }
+
+  const existsForeignKey =  (knex, table, column) => {
+      return  knex.schema.hasColumn(table, column);
+  }
