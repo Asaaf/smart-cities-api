@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "cities",
   "info": {
-    "name": "Cities"
+    "name": "Cities",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -16,8 +17,7 @@
       "required": true
     },
     "province_id": {
-      "type": "integer",
-      "required": true
+      "model": "provinces"
     }
   }
 }
