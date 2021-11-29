@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "11/29/2021 4:51:10 PM"
+    "x-generation-date": "11/29/2021 5:13:04 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -9023,8 +9023,7 @@
       "Cities": {
         "required": [
           "id",
-          "name",
-          "province_id"
+          "name"
         ],
         "properties": {
           "id": {
@@ -9034,7 +9033,30 @@
             "type": "string"
           },
           "province_id": {
-            "type": "integer"
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "country_id": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -9044,15 +9066,14 @@
       },
       "NewCities": {
         "required": [
-          "name",
-          "province_id"
+          "name"
         ],
         "properties": {
           "name": {
             "type": "string"
           },
           "province_id": {
-            "type": "integer"
+            "type": "string"
           },
           "published_at": {
             "type": "string",
