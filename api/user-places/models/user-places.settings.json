@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_places",
+  "info": {
+    "name": "User Places"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "visited": {
+      "type": "boolean",
+      "required": true
+    },
+    "interested": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}

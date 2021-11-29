@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/travel-companions",
+      "handler": "travel-companions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/travel-companions/count",
+      "handler": "travel-companions.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/travel-companions/:id",
+      "handler": "travel-companions.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/travel-companions",
+      "handler": "travel-companions.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/travel-companions/:id",
+      "handler": "travel-companions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/travel-companions/:id",
+      "handler": "travel-companions.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "devices",
+  "info": {
+    "name": "Devices"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "device_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

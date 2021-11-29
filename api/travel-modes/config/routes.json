@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/travel-modes",
+      "handler": "travel-modes.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/travel-modes/count",
+      "handler": "travel-modes.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/travel-modes/:id",
+      "handler": "travel-modes.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/travel-modes",
+      "handler": "travel-modes.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/travel-modes/:id",
+      "handler": "travel-modes.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/travel-modes/:id",
+      "handler": "travel-modes.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cities",
+  "info": {
+    "name": "Cities"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "province_id": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

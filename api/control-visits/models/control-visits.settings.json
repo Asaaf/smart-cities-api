@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "control_visits",
+  "info": {
+    "name": "Control Visits"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "count": {
+      "type": "integer",
+      "required": true
+    },
+    "date_count": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+}

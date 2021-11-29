@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "travel_companions",
+  "info": {
+    "name": "Travel Companions"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "birth_date": {
+      "type": "date"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "M",
+        "F",
+        "O"
+      ],
+      "required": true
+    }
+  }
+}

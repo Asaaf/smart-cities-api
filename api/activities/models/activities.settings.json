@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "activities",
+  "info": {
+    "name": "activities"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
