@@ -524,8 +524,36 @@
             "type": "string"
           },
           "name": {
-            "type": "string",
-            "default": "name"
+            "type": "string"
+          },
+          "provinces": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "country_id": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -539,8 +567,13 @@
         ],
         "properties": {
           "name": {
-            "type": "string",
-            "default": "name"
+            "type": "string"
+          },
+          "provinces": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",

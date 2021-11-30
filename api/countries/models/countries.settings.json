@@ -14,8 +14,12 @@
     "name": {
       "type": "string",
       "unique": true,
-      "required": true,
-      "default": "name"
+      "required": true
+    },
+    "provinces": {
+      "via": "country_id",
+      "collection": "provinces",
+      "autoPopulate": false
     }
   }
 }
