@@ -2,12 +2,14 @@
   "kind": "collectionType",
   "collectionName": "countries",
   "info": {
-    "name": "countries"
+    "name": "countries",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true,
-    "draftAndPublish": true
+    "timestamps": false,
+    "draftAndPublish": false,
+    "populateCreatorFields": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -18,8 +20,8 @@
     },
     "provinces": {
       "via": "country_id",
-      "collection": "provinces",
-      "autoPopulate": false
+      "autoPopulate": false,
+      "collection": "provinces"
     }
   }
 }

@@ -7,8 +7,9 @@
   },
   "options": {
     "increments": true,
-    "timestamps": true,
-    "draftAndPublish": true
+    "timestamps": false,
+    "draftAndPublish": false,
+    "populateCreatorFields": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -18,13 +19,13 @@
       "maxLength": 100
     },
     "country_id": {
-      "model": "countries",
-      "via": "provinces"
+      "via": "provinces",
+      "model": "countries"
     },
     "cities": {
       "via": "province_id",
-      "collection": "cities",
-      "autoPopulate": false
+      "autoPopulate": false,
+      "collection": "cities"
     }
   }
 }
