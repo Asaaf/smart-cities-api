@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/user-places": {
+    "/tourist-places": {
       "get": {
         "deprecated": false,
-        "description": "Find all the user-places's records",
+        "description": "Find all the tourist-places's records",
         "responses": {
           "200": {
-            "description": "Retrieve user-places document(s)",
+            "description": "Retrieve tourist-places document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "User-places"
+          "Tourist-places"
         ],
         "parameters": [
           {
@@ -195,10 +195,10 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new user-places record",
+        "description": "Create a new tourist-places record",
         "responses": {
           "200": {
-            "description": "Retrieve user-places document(s)",
+            "description": "Retrieve tourist-places document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "User-places"
+          "Tourist-places"
         ],
         "requestBody": {
           "description": "",
@@ -252,20 +252,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUser-places"
+                "$ref": "#/components/schemas/NewTourist-places"
               }
             }
           }
         }
       }
     },
-    "/user-places/count": {
+    "/tourist-places/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the number of user-places documents",
+        "description": "Retrieve the number of tourist-places documents",
         "responses": {
           "200": {
-            "description": "Retrieve user-places document(s)",
+            "description": "Retrieve tourist-places document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -311,18 +311,18 @@
         },
         "summary": "",
         "tags": [
-          "User-places"
+          "Tourist-places"
         ],
         "parameters": []
       }
     },
-    "/user-places/{id}": {
+    "/tourist-places/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one user-places record",
+        "description": "Find one tourist-places record",
         "responses": {
           "200": {
-            "description": "Retrieve user-places document(s)",
+            "description": "Retrieve tourist-places document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -368,7 +368,7 @@
         },
         "summary": "",
         "tags": [
-          "User-places"
+          "Tourist-places"
         ],
         "parameters": [
           {
@@ -385,10 +385,10 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single user-places record",
+        "description": "Update a single tourist-places record",
         "responses": {
           "200": {
-            "description": "Retrieve user-places document(s)",
+            "description": "Retrieve tourist-places document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -434,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "User-places"
+          "Tourist-places"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUser-places"
+                "$ref": "#/components/schemas/NewTourist-places"
               }
             }
           }
@@ -462,10 +462,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single user-places record",
+        "description": "Delete a single tourist-places record",
         "responses": {
           "200": {
-            "description": "deletes a single user-places based on the ID supplied",
+            "description": "deletes a single tourist-places based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -508,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "User-places"
+          "Tourist-places"
         ],
         "parameters": [
           {
@@ -527,11 +527,9 @@
   },
   "components": {
     "schemas": {
-      "User-places": {
+      "Tourist-places": {
         "required": [
-          "id",
-          "visited",
-          "interested"
+          "id"
         ],
         "properties": {
           "id": {
@@ -539,31 +537,13 @@
           },
           "visited": {
             "type": "boolean"
-          },
-          "interested": {
-            "type": "boolean"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           }
         }
       },
-      "NewUser-places": {
-        "required": [
-          "visited",
-          "interested"
-        ],
+      "NewTourist-places": {
         "properties": {
           "visited": {
             "type": "boolean"
-          },
-          "interested": {
-            "type": "boolean"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           },
           "created_by": {
             "type": "string"

@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/user-places",
-      "handler": "user-places.find",
+      "path": "/tourist-places",
+      "handler": "tourist-places.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/user-places/count",
-      "handler": "user-places.count",
+      "path": "/tourist-places/count",
+      "handler": "tourist-places.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/user-places/:id",
-      "handler": "user-places.findOne",
+      "path": "/tourist-places/:id",
+      "handler": "tourist-places.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/user-places",
-      "handler": "user-places.create",
+      "path": "/tourist-places",
+      "handler": "tourist-places.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/user-places/:id",
-      "handler": "user-places.update",
+      "path": "/tourist-places/:id",
+      "handler": "tourist-places.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/user-places/:id",
-      "handler": "user-places.delete",
+      "path": "/tourist-places/:id",
+      "handler": "tourist-places.delete",
       "config": {
         "policies": []
       }

@@ -1,23 +1,19 @@
 {
   "kind": "collectionType",
-  "collectionName": "user_places",
+  "collectionName": "tourist_places",
   "info": {
-    "name": "User Places"
+    "name": "Tourist Places"
   },
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "visited": {
       "type": "boolean",
-      "required": true
-    },
-    "interested": {
-      "type": "boolean",
-      "required": true
+      "required": false
     }
   }
 }
