@@ -18,7 +18,8 @@
       "maxLength": 100
     },
     "country_id": {
-      "model": "countries"
+      "model": "countries",
+      "via": "provinces"
     }
   }
 }

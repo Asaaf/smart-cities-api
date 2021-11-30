@@ -539,6 +539,12 @@
               "name": {
                 "type": "string"
               },
+              "provinces": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
               },
