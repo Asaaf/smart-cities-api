@@ -541,6 +541,12 @@
               "country_id": {
                 "type": "string"
               },
+              "cities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
               },

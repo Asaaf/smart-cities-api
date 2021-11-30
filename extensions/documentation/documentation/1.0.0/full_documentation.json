@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "11/29/2021 7:15:37 PM"
+    "x-generation-date": "11/29/2021 7:48:11 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -9047,6 +9047,12 @@
               "country_id": {
                 "type": "string"
               },
+              "cities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
               },
@@ -9163,6 +9169,12 @@
                 },
                 "country_id": {
                   "type": "string"
+                },
+                "cities": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -9338,6 +9350,35 @@
               }
             }
           },
+          "cities": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "province_id": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -9355,6 +9396,12 @@
           },
           "country_id": {
             "type": "string"
+          },
+          "cities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
