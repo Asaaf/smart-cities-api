@@ -7,8 +7,9 @@
   },
   "options": {
     "increments": true,
-    "timestamps": true,
-    "draftAndPublish": true
+    "timestamps": false,
+    "draftAndPublish": false,
+    "populateCreatorFields": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -17,8 +18,8 @@
       "required": true
     },
     "province_id": {
-      "model": "provinces",
-      "via": "cities"
+      "via": "cities",
+      "model": "provinces"
     }
   }
 }

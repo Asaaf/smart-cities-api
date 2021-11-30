@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/tourists",
+      "handler": "tourists.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tourists/count",
+      "handler": "tourists.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tourists/:id",
+      "handler": "tourists.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/tourists",
+      "handler": "tourists.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/tourists/:id",
+      "handler": "tourists.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/tourists/:id",
+      "handler": "tourists.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
