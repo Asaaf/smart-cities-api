@@ -10,40 +10,8 @@
     },
     {
       "method": "GET",
-      "path": "/countries/count",
-      "handler": "countries.count",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/countries/:id",
-      "handler": "countries.findOne",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "POST",
-      "path": "/countries",
-      "handler": "countries.create",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "PUT",
-      "path": "/countries/:id",
-      "handler": "countries.update",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "DELETE",
-      "path": "/countries/:id",
-      "handler": "countries.delete",
+      "path": "/countries/:id/provinces",
+      "handler": "countries.provinces",
       "config": {
         "policies": []
       }
