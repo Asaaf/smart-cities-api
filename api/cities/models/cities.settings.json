@@ -17,7 +17,8 @@
       "required": true
     },
     "province_id": {
-      "model": "provinces"
+      "model": "provinces",
+      "via": "cities"
     }
   }
 }

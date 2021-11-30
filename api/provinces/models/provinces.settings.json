@@ -20,6 +20,11 @@
     "country_id": {
       "model": "countries",
       "via": "provinces"
+    },
+    "cities": {
+      "via": "province_id",
+      "collection": "cities",
+      "autoPopulate": false
     }
   }
 }
