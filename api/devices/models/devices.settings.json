@@ -12,20 +12,18 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "serial": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
     "tourist_photos": {
       "autoPopulate": false,
       "via": "device_id",
       "collection": "tourist-photos"
     },
     "control_visits": {
-      "autoPopulate": false,
       "via": "device_id",
       "collection": "control-visits"
+    },
+    "serial": {
+      "type": "richtext",
+      "required": true
     }
   }
 }

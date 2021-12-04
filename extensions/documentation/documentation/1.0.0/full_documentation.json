@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/04/2021 4:24:06 PM"
+    "x-generation-date": "12/04/2021 5:22:08 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6529,9 +6529,6 @@
               "id": {
                 "type": "string"
               },
-              "serial": {
-                "type": "string"
-              },
               "tourist_photos": {
                 "type": "array",
                 "items": {
@@ -6543,6 +6540,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "serial": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"
@@ -6666,9 +6666,6 @@
           "id": {
             "type": "string"
           },
-          "serial": {
-            "type": "string"
-          },
           "tourist_photos": {
             "type": "array",
             "items": {
@@ -6743,6 +6740,9 @@
               }
             }
           },
+          "serial": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -6754,9 +6754,6 @@
           "serial"
         ],
         "properties": {
-          "serial": {
-            "type": "string"
-          },
           "tourist_photos": {
             "type": "array",
             "items": {
@@ -6768,6 +6765,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "serial": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -7423,9 +7423,6 @@
               "id": {
                 "type": "string"
               },
-              "serial": {
-                "type": "string"
-              },
               "tourist_photos": {
                 "type": "array",
                 "items": {
@@ -7437,6 +7434,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "serial": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"

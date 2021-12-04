@@ -111,9 +111,6 @@
               "id": {
                 "type": "string"
               },
-              "serial": {
-                "type": "string"
-              },
               "tourist_photos": {
                 "type": "array",
                 "items": {
@@ -125,6 +122,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "serial": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"
