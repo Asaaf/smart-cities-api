@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/tourist-photos": {
+    "/tourist-photos/associate": {
       "post": {
         "deprecated": false,
         "description": "Create a new tourist-photos record",
@@ -60,7 +60,11 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTourist-photos"
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
               }
             }
           }

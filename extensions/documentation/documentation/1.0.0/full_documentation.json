@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/04/2021 12:30:38 PM"
+    "x-generation-date": "12/04/2021 4:15:35 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2380,7 +2380,7 @@
         ]
       }
     },
-    "/tourist-photos": {
+    "/tourist-photos/associate": {
       "post": {
         "deprecated": false,
         "description": "Create a new tourist-photos record",
@@ -2440,7 +2440,11 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTourist-photos"
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
               }
             }
           }
