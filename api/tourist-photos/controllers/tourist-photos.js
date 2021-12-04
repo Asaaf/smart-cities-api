@@ -5,4 +5,13 @@
  * to customize this controller
  */
 
-module.exports = {};
+const validator = require('./validator');
+
+module.exports = {
+    async associate(ctx) {
+        validator.emailValidation(ctx);
+        // TODO :: validate email
+        validator.validation(ctx, true);
+        return ctx.request.body;
+    },
+};

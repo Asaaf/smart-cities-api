@@ -2,8 +2,8 @@
   "routes": [
     {
       "method": "POST",
-      "path": "/tourist-photos",
-      "handler": "tourist-photos.create",
+      "path": "/tourist-photos/associate",
+      "handler": "tourist-photos.associate",
       "config": {
         "policies": []
       }
