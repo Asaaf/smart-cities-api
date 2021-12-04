@@ -555,6 +555,29 @@
               "F",
               "O"
             ]
+          },
+          "city_id": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "province_id": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -595,6 +618,9 @@
               "F",
               "O"
             ]
+          },
+          "city_id": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "place_activities",
+  "info": {
+    "name": "place_activities"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "activity_id": {
+      "model": "activities",
+      "via": "place_activities"
+    },
+    "place_id": {
+      "model": "places",
+      "via": "place_activities"
+    }
+  }
+}

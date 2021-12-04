@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/tourist-activities",
+      "handler": "tourist-activities.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tourist-activities/:id",
+      "handler": "tourist-activities.findOne",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

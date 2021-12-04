@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tourist_activities",
+  "info": {
+    "name": "tourist_activities"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "activity_id": {
+      "model": "activities",
+      "via": "tourist_activities"
+    }
+  }
+}

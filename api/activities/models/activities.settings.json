@@ -14,6 +14,14 @@
     "name": {
       "type": "string",
       "required": true
+    },
+    "tourist_activities": {
+      "via": "activity_id",
+      "collection": "tourist-activities"
+    },
+    "place_activities": {
+      "via": "activity_id",
+      "collection": "place-activities"
     }
   }
 }
