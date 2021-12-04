@@ -547,13 +547,13 @@
           "device_id": {
             "required": [
               "id",
-              "device_id"
+              "serial"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "device_id": {
+              "serial": {
                 "type": "string"
               },
               "tourist_photos": {
