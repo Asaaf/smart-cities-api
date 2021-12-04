@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "tourist_photos",
   "info": {
-    "name": "tourist_photos"
+    "name": "tourist_photos",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -33,6 +34,10 @@
     "device_id": {
       "model": "devices",
       "via": "tourist_photos"
+    },
+    "tourist_id": {
+      "via": "tourist_photos",
+      "model": "tourists"
     }
   }
 }

@@ -209,6 +209,50 @@
           "name": {
             "type": "string"
           },
+          "visits": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "start_date"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "end_date": {
+                  "type": "string"
+                },
+                "tourist_id": {
+                  "type": "string"
+                },
+                "city_id": {
+                  "type": "string"
+                },
+                "travel_mode_id": {
+                  "type": "string"
+                },
+                "travel_companions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -222,6 +266,12 @@
         "properties": {
           "name": {
             "type": "string"
+          },
+          "visits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",

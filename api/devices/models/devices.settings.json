@@ -18,8 +18,13 @@
     },
     "tourist_photos": {
       "via": "device_id",
-      "collection": "tourist-photos",
-      "autoPopulate": false
+      "autoPopulate": false,
+      "collection": "tourist-photos"
+    },
+    "control_visits": {
+      "via": "device_id",
+      "autoPopulate": false,
+      "collection": "control-visits"
     }
   }
 }

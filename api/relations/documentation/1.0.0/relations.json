@@ -208,6 +208,55 @@
           "name": {
             "type": "string"
           },
+          "travel_companions": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "lastname",
+                "birth_date",
+                "gender"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "lastname": {
+                  "type": "string"
+                },
+                "birth_date": {
+                  "type": "string"
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "M",
+                    "F",
+                    "O"
+                  ]
+                },
+                "relation_id": {
+                  "type": "string"
+                },
+                "visit_id": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -221,6 +270,12 @@
         "properties": {
           "name": {
             "type": "string"
+          },
+          "travel_companions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",

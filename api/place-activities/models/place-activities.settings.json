@@ -16,8 +16,8 @@
       "via": "place_activities"
     },
     "place_id": {
-      "model": "places",
-      "via": "place_activities"
+      "via": "place_activities",
+      "model": "places"
     }
   }
 }

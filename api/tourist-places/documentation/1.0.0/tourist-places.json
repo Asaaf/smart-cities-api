@@ -332,7 +332,8 @@
     "schemas": {
       "Tourist-places": {
         "required": [
-          "id"
+          "id",
+          "interested"
         ],
         "properties": {
           "id": {
@@ -340,13 +341,144 @@
           },
           "visited": {
             "type": "boolean"
+          },
+          "interested": {
+            "type": "boolean"
+          },
+          "tourist_id": {
+            "required": [
+              "id",
+              "email",
+              "phone",
+              "name",
+              "lastname",
+              "birth_date",
+              "gender"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "birth_date": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "M",
+                  "F",
+                  "O"
+                ]
+              },
+              "city_id": {
+                "type": "string"
+              },
+              "visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "place_id": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              },
+              "place_activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "city_id": {
+                "type": "string"
+              },
+              "tourist_places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
       "NewTourist-places": {
+        "required": [
+          "interested"
+        ],
         "properties": {
           "visited": {
             "type": "boolean"
+          },
+          "interested": {
+            "type": "boolean"
+          },
+          "tourist_id": {
+            "type": "string"
+          },
+          "place_id": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

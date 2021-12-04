@@ -127,6 +127,24 @@
                 "province_id": {
                   "type": "string"
                 },
+                "visits": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "places": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "tourists": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "created_by": {
                   "type": "string"
                 },

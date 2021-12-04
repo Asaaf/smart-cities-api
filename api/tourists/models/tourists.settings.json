@@ -46,7 +46,28 @@
       "required": true
     },
     "city_id": {
-      "model": "cities"
+      "model": "cities",
+      "via": "tourists"
+    },
+    "visits": {
+      "via": "tourist_id",
+      "autoPopulate": false,
+      "collection": "visits"
+    },
+    "tourist_activities": {
+      "via": "tourist_id",
+      "autoPopulate": false,
+      "collection": "tourist-activities"
+    },
+    "tourist_photos": {
+      "via": "tourist_id",
+      "autoPopulate": false,
+      "collection": "tourist-photos"
+    },
+    "tourist_places": {
+      "via": "tourist_id",
+      "autoPopulate": false,
+      "collection": "tourist-places"
     }
   }
 }

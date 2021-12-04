@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "visits",
   "info": {
-    "name": "Visits"
+    "name": "Visits",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -18,17 +19,22 @@
     "end_date": {
       "type": "date"
     },
-    "user_id": {
-      "type": "integer",
-      "required": true
+    "tourist_id": {
+      "via": "visits",
+      "model": "tourists"
     },
     "city_id": {
-      "type": "integer",
-      "required": true
+      "model": "cities",
+      "via": "visits"
     },
     "travel_mode_id": {
-      "type": "integer",
-      "required": true
+      "model": "travel-modes",
+      "via": "visits"
+    },
+    "travel_companions": {
+      "via": "visit_id",
+      "autoPopulate": false,
+      "collection": "travel-companions"
     }
   }
 }

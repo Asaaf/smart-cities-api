@@ -239,6 +239,79 @@
               }
             }
           },
+          "city_id": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "province_id": {
+                "type": "string"
+              },
+              "visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourists": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "tourist_places": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "interested"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "visited": {
+                  "type": "boolean"
+                },
+                "interested": {
+                  "type": "boolean"
+                },
+                "tourist_id": {
+                  "type": "string"
+                },
+                "place_id": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -260,6 +333,15 @@
             "type": "number"
           },
           "place_activities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "city_id": {
+            "type": "string"
+          },
+          "tourist_places": {
             "type": "array",
             "items": {
               "type": "string"

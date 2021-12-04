@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "places",
   "info": {
-    "name": "places"
+    "name": "places",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -23,7 +24,17 @@
     },
     "place_activities": {
       "via": "place_id",
+      "autoPopulate": false,
       "collection": "place-activities"
+    },
+    "city_id": {
+      "model": "cities",
+      "via": "places"
+    },
+    "tourist_places": {
+      "via": "place_id",
+      "autoPopulate": false,
+      "collection": "tourist-places"
     }
   }
 }

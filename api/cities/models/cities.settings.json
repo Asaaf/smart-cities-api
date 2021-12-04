@@ -20,6 +20,21 @@
     "province_id": {
       "via": "cities",
       "model": "provinces"
+    },
+    "visits": {
+      "via": "city_id",
+      "autoPopulate": false,
+      "collection": "visits"
+    },
+    "places": {
+      "via": "city_id",
+      "autoPopulate": false,
+      "collection": "places"
+    },
+    "tourists": {
+      "via": "city_id",
+      "autoPopulate": false,
+      "collection": "tourists"
     }
   }
 }

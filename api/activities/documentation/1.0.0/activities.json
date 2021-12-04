@@ -221,6 +221,9 @@
                 "activity_id": {
                   "type": "string"
                 },
+                "tourist_id": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },

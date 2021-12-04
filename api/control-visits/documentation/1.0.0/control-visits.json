@@ -544,6 +544,41 @@
             "type": "string",
             "format": "date-time"
           },
+          "device_id": {
+            "required": [
+              "id",
+              "device_id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "device_id": {
+                "type": "string"
+              },
+              "tourist_photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "control_visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -562,6 +597,9 @@
           "date_count": {
             "type": "string",
             "format": "date-time"
+          },
+          "device_id": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

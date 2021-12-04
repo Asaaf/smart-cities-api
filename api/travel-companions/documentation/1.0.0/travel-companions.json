@@ -532,6 +532,7 @@
           "id",
           "name",
           "lastname",
+          "birth_date",
           "gender"
         ],
         "properties": {
@@ -539,10 +540,12 @@
             "type": "string"
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 45
           },
           "lastname": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 45
           },
           "birth_date": {
             "type": "string",
@@ -555,6 +558,76 @@
               "F",
               "O"
             ]
+          },
+          "relation_id": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "travel_companions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "visit_id": {
+            "required": [
+              "id",
+              "start_date"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "start_date": {
+                "type": "string"
+              },
+              "end_date": {
+                "type": "string"
+              },
+              "tourist_id": {
+                "type": "string"
+              },
+              "city_id": {
+                "type": "string"
+              },
+              "travel_mode_id": {
+                "type": "string"
+              },
+              "travel_companions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -566,14 +639,17 @@
         "required": [
           "name",
           "lastname",
+          "birth_date",
           "gender"
         ],
         "properties": {
           "name": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 45
           },
           "lastname": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 45
           },
           "birth_date": {
             "type": "string",
@@ -586,6 +662,12 @@
               "F",
               "O"
             ]
+          },
+          "relation_id": {
+            "type": "string"
+          },
+          "visit_id": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
