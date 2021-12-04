@@ -31,22 +31,6 @@
       "config": {
         "policies": []
       }
-    },
-    {
-      "method": "PUT",
-      "path": "/place-activities/:id",
-      "handler": "place-activities.update",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "DELETE",
-      "path": "/place-activities/:id",
-      "handler": "place-activities.delete",
-      "config": {
-        "policies": []
-      }
     }
   ]
 }
