@@ -10,14 +10,6 @@
     },
     {
       "method": "GET",
-      "path": "/tourist-places/count",
-      "handler": "tourist-places.count",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
       "path": "/tourist-places/:id",
       "handler": "tourist-places.findOne",
       "config": {
@@ -28,22 +20,6 @@
       "method": "POST",
       "path": "/tourist-places",
       "handler": "tourist-places.create",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "PUT",
-      "path": "/tourist-places/:id",
-      "handler": "tourist-places.update",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "DELETE",
-      "path": "/tourist-places/:id",
-      "handler": "tourist-places.delete",
       "config": {
         "policies": []
       }

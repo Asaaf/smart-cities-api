@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/tourist-places": {
+    "/tourist-activities": {
       "get": {
         "deprecated": false,
-        "description": "Find all the tourist-places's records",
+        "description": "Find all the tourist-activities's records",
         "responses": {
           "200": {
-            "description": "Retrieve tourist-places document(s)",
+            "description": "Retrieve tourist-activities document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Tourist-places"
+          "Tourist-activities"
         ],
         "parameters": [
           {
@@ -192,80 +192,15 @@
             "deprecated": false
           }
         ]
-      },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new tourist-places record",
-        "responses": {
-          "200": {
-            "description": "Retrieve tourist-places document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Tourist-places"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewTourist-places"
-              }
-            }
-          }
-        }
       }
     },
-    "/tourist-places/{id}": {
+    "/tourist-activities/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one tourist-places record",
+        "description": "Find one tourist-activities record",
         "responses": {
           "200": {
-            "description": "Retrieve tourist-places document(s)",
+            "description": "Retrieve tourist-activities document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -311,7 +246,7 @@
         },
         "summary": "",
         "tags": [
-          "Tourist-places"
+          "Tourist-activities"
         ],
         "parameters": [
           {
@@ -330,7 +265,7 @@
   },
   "components": {
     "schemas": {
-      "Tourist-places": {
+      "Tourist-activities": {
         "required": [
           "id"
         ],
@@ -338,15 +273,47 @@
           "id": {
             "type": "string"
           },
-          "visited": {
-            "type": "boolean"
+          "activity_id": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "tourist_activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "place_activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
-      "NewTourist-places": {
+      "NewTourist-activities": {
         "properties": {
-          "visited": {
-            "type": "boolean"
+          "activity_id": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

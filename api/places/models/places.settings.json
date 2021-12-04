@@ -20,6 +20,10 @@
     },
     "longitude": {
       "type": "float"
+    },
+    "place_activities": {
+      "via": "place_id",
+      "collection": "place-activities"
     }
   }
 }

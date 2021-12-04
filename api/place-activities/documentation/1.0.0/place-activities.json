@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/tourist-places": {
+    "/place-activities": {
       "get": {
         "deprecated": false,
-        "description": "Find all the tourist-places's records",
+        "description": "Find all the place-activities's records",
         "responses": {
           "200": {
-            "description": "Retrieve tourist-places document(s)",
+            "description": "Retrieve place-activities document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Tourist-places"
+          "Place-activities"
         ],
         "parameters": [
           {
@@ -195,10 +195,10 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new tourist-places record",
+        "description": "Create a new place-activities record",
         "responses": {
           "200": {
-            "description": "Retrieve tourist-places document(s)",
+            "description": "Retrieve place-activities document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Tourist-places"
+          "Place-activities"
         ],
         "requestBody": {
           "description": "",
@@ -252,20 +252,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTourist-places"
+                "$ref": "#/components/schemas/NewPlace-activities"
               }
             }
           }
         }
       }
     },
-    "/tourist-places/{id}": {
+    "/place-activities/count": {
       "get": {
         "deprecated": false,
-        "description": "Find one tourist-places record",
+        "description": "Retrieve the number of place-activities documents",
         "responses": {
           "200": {
-            "description": "Retrieve tourist-places document(s)",
+            "description": "Retrieve place-activities document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -311,7 +311,204 @@
         },
         "summary": "",
         "tags": [
-          "Tourist-places"
+          "Place-activities"
+        ],
+        "parameters": []
+      }
+    },
+    "/place-activities/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "Find one place-activities record",
+        "responses": {
+          "200": {
+            "description": "Retrieve place-activities document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Place-activities"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a single place-activities record",
+        "responses": {
+          "200": {
+            "description": "Retrieve place-activities document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Place-activities"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPlace-activities"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a single place-activities record",
+        "responses": {
+          "200": {
+            "description": "deletes a single place-activities based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Place-activities"
         ],
         "parameters": [
           {
@@ -330,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Tourist-places": {
+      "Place-activities": {
         "required": [
           "id"
         ],
@@ -338,15 +535,85 @@
           "id": {
             "type": "string"
           },
-          "visited": {
-            "type": "boolean"
+          "activity_id": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "tourist_activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "place_activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "place_id": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              },
+              "place_activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
-      "NewTourist-places": {
+      "NewPlace-activities": {
         "properties": {
-          "visited": {
-            "type": "boolean"
+          "activity_id": {
+            "type": "string"
+          },
+          "place_id": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
