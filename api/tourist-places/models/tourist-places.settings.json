@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "tourist_places",
   "info": {
-    "name": "Tourist Places"
+    "name": "Tourist Places",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -14,6 +15,18 @@
     "visited": {
       "type": "boolean",
       "required": false
+    },
+    "interested": {
+      "type": "boolean",
+      "required": true
+    },
+    "tourist_id": {
+      "via": "tourist_places",
+      "model": "tourists"
+    },
+    "place_id": {
+      "model": "places",
+      "via": "tourist_places"
     }
   }
 }

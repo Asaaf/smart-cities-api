@@ -594,6 +594,15 @@
                   "type": "string"
                 }
               },
+              "city_id": {
+                "type": "string"
+              },
+              "tourist_places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
               },

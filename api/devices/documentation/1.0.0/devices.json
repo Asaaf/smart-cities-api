@@ -237,6 +237,42 @@
                 "device_id": {
                   "type": "string"
                 },
+                "tourist_id": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "control_visits": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "count",
+                "date_count"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "integer"
+                },
+                "date_count": {
+                  "type": "string"
+                },
+                "device_id": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -261,6 +297,12 @@
             "type": "string"
           },
           "tourist_photos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "control_visits": {
             "type": "array",
             "items": {
               "type": "string"

@@ -17,10 +17,12 @@
     },
     "tourist_activities": {
       "via": "activity_id",
+      "autoPopulate": false,
       "collection": "tourist-activities"
     },
     "place_activities": {
       "via": "activity_id",
+      "autoPopulate": false,
       "collection": "place-activities"
     }
   }

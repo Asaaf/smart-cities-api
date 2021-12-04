@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/04/2021 10:46:40 AM"
+    "x-generation-date": "12/04/2021 11:45:33 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6908,6 +6908,9 @@
                 "activity_id": {
                   "type": "string"
                 },
+                "tourist_id": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -7020,6 +7023,172 @@
                 "type": "string"
               }
             }
+          },
+          "visits": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "start_date"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "end_date": {
+                  "type": "string"
+                },
+                "tourist_id": {
+                  "type": "string"
+                },
+                "city_id": {
+                  "type": "string"
+                },
+                "travel_mode_id": {
+                  "type": "string"
+                },
+                "travel_companions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "places": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "latitude": {
+                  "type": "number"
+                },
+                "longitude": {
+                  "type": "number"
+                },
+                "place_activities": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "city_id": {
+                  "type": "string"
+                },
+                "tourist_places": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "tourists": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "email",
+                "phone",
+                "name",
+                "lastname",
+                "birth_date",
+                "gender"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "lastname": {
+                  "type": "string"
+                },
+                "birth_date": {
+                  "type": "string"
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "M",
+                    "F",
+                    "O"
+                  ]
+                },
+                "city_id": {
+                  "type": "string"
+                },
+                "visits": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "tourist_activities": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "tourist_photos": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "tourist_places": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -7033,6 +7202,24 @@
           },
           "province_id": {
             "type": "string"
+          },
+          "visits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "places": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tourists": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"
@@ -7059,6 +7246,41 @@
             "type": "string",
             "format": "date-time"
           },
+          "device_id": {
+            "required": [
+              "id",
+              "device_id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "device_id": {
+                "type": "string"
+              },
+              "tourist_photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "control_visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7077,6 +7299,9 @@
           "date_count": {
             "type": "string",
             "format": "date-time"
+          },
+          "device_id": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -7199,6 +7424,42 @@
                 "device_id": {
                   "type": "string"
                 },
+                "tourist_id": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "control_visits": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "count",
+                "date_count"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "integer"
+                },
+                "date_count": {
+                  "type": "string"
+                },
+                "device_id": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -7223,6 +7484,12 @@
             "type": "string"
           },
           "tourist_photos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "control_visits": {
             "type": "array",
             "items": {
               "type": "string"
@@ -7307,6 +7574,15 @@
                   "type": "string"
                 }
               },
+              "city_id": {
+                "type": "string"
+              },
+              "tourist_places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
               },
@@ -7379,6 +7655,79 @@
               }
             }
           },
+          "city_id": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "province_id": {
+                "type": "string"
+              },
+              "visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourists": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "tourist_places": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "interested"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "visited": {
+                  "type": "boolean"
+                },
+                "interested": {
+                  "type": "boolean"
+                },
+                "tourist_id": {
+                  "type": "string"
+                },
+                "place_id": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7400,6 +7749,15 @@
             "type": "number"
           },
           "place_activities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "city_id": {
+            "type": "string"
+          },
+          "tourist_places": {
             "type": "array",
             "items": {
               "type": "string"
@@ -7473,6 +7831,24 @@
                 "province_id": {
                   "type": "string"
                 },
+                "visits": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "places": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "tourists": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -7522,6 +7898,55 @@
           "name": {
             "type": "string"
           },
+          "travel_companions": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "lastname",
+                "birth_date",
+                "gender"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "lastname": {
+                  "type": "string"
+                },
+                "birth_date": {
+                  "type": "string"
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "M",
+                    "F",
+                    "O"
+                  ]
+                },
+                "relation_id": {
+                  "type": "string"
+                },
+                "visit_id": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7535,6 +7960,12 @@
         "properties": {
           "name": {
             "type": "string"
+          },
+          "travel_companions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -7590,12 +8021,87 @@
                 "type": "string"
               }
             }
+          },
+          "tourist_id": {
+            "required": [
+              "id",
+              "email",
+              "phone",
+              "name",
+              "lastname",
+              "birth_date",
+              "gender"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "birth_date": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "M",
+                  "F",
+                  "O"
+                ]
+              },
+              "city_id": {
+                "type": "string"
+              },
+              "visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
       "NewTourist-activities": {
         "properties": {
           "activity_id": {
+            "type": "string"
+          },
+          "tourist_id": {
             "type": "string"
           },
           "created_by": {
@@ -7652,8 +8158,86 @@
                   "type": "string"
                 }
               },
+              "control_visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "tourist_id": {
+            "required": [
+              "id",
+              "email",
+              "phone",
+              "name",
+              "lastname",
+              "birth_date",
+              "gender"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "birth_date": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "M",
+                  "F",
+                  "O"
+                ]
+              },
+              "city_id": {
+                "type": "string"
+              },
+              "visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "created_by": {
                 "type": "string"
@@ -7692,6 +8276,9 @@
           "device_id": {
             "type": "string"
           },
+          "tourist_id": {
+            "type": "string"
+          },
           "created_by": {
             "type": "string"
           },
@@ -7702,7 +8289,8 @@
       },
       "Tourist-places": {
         "required": [
-          "id"
+          "id",
+          "interested"
         ],
         "properties": {
           "id": {
@@ -7710,13 +8298,144 @@
           },
           "visited": {
             "type": "boolean"
+          },
+          "interested": {
+            "type": "boolean"
+          },
+          "tourist_id": {
+            "required": [
+              "id",
+              "email",
+              "phone",
+              "name",
+              "lastname",
+              "birth_date",
+              "gender"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "birth_date": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "M",
+                  "F",
+                  "O"
+                ]
+              },
+              "city_id": {
+                "type": "string"
+              },
+              "visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "place_id": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              },
+              "place_activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "city_id": {
+                "type": "string"
+              },
+              "tourist_places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
       "NewTourist-places": {
+        "required": [
+          "interested"
+        ],
         "properties": {
           "visited": {
             "type": "boolean"
+          },
+          "interested": {
+            "type": "boolean"
+          },
+          "tourist_id": {
+            "type": "string"
+          },
+          "place_id": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -7783,11 +8502,171 @@
               "province_id": {
                 "type": "string"
               },
+              "visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourists": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
               "updated_by": {
                 "type": "string"
+              }
+            }
+          },
+          "visits": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "start_date"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "end_date": {
+                  "type": "string"
+                },
+                "tourist_id": {
+                  "type": "string"
+                },
+                "city_id": {
+                  "type": "string"
+                },
+                "travel_mode_id": {
+                  "type": "string"
+                },
+                "travel_companions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "tourist_activities": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "activity_id": {
+                  "type": "string"
+                },
+                "tourist_id": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "tourist_photos": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "photo_private_url",
+                "photo_public_url",
+                "photo_date",
+                "photo_code"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "photo_private_url": {
+                  "type": "string"
+                },
+                "photo_public_url": {
+                  "type": "string"
+                },
+                "photo_date": {
+                  "type": "string"
+                },
+                "photo_code": {
+                  "type": "string"
+                },
+                "device_id": {
+                  "type": "string"
+                },
+                "tourist_id": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "tourist_places": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "interested"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "visited": {
+                  "type": "boolean"
+                },
+                "interested": {
+                  "type": "boolean"
+                },
+                "tourist_id": {
+                  "type": "string"
+                },
+                "place_id": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -7834,6 +8713,30 @@
           "city_id": {
             "type": "string"
           },
+          "visits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tourist_activities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tourist_photos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tourist_places": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "created_by": {
             "type": "string"
           },
@@ -7847,6 +8750,7 @@
           "id",
           "name",
           "lastname",
+          "birth_date",
           "gender"
         ],
         "properties": {
@@ -7854,10 +8758,12 @@
             "type": "string"
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 45
           },
           "lastname": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 45
           },
           "birth_date": {
             "type": "string",
@@ -7870,6 +8776,76 @@
               "F",
               "O"
             ]
+          },
+          "relation_id": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "travel_companions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "visit_id": {
+            "required": [
+              "id",
+              "start_date"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "start_date": {
+                "type": "string"
+              },
+              "end_date": {
+                "type": "string"
+              },
+              "tourist_id": {
+                "type": "string"
+              },
+              "city_id": {
+                "type": "string"
+              },
+              "travel_mode_id": {
+                "type": "string"
+              },
+              "travel_companions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -7881,14 +8857,17 @@
         "required": [
           "name",
           "lastname",
+          "birth_date",
           "gender"
         ],
         "properties": {
           "name": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 45
           },
           "lastname": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 45
           },
           "birth_date": {
             "type": "string",
@@ -7901,6 +8880,12 @@
               "F",
               "O"
             ]
+          },
+          "relation_id": {
+            "type": "string"
+          },
+          "visit_id": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -7926,6 +8911,50 @@
           "name": {
             "type": "string"
           },
+          "visits": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "start_date"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "end_date": {
+                  "type": "string"
+                },
+                "tourist_id": {
+                  "type": "string"
+                },
+                "city_id": {
+                  "type": "string"
+                },
+                "travel_mode_id": {
+                  "type": "string"
+                },
+                "travel_companions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7939,6 +8968,12 @@
         "properties": {
           "name": {
             "type": "string"
+          },
+          "visits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -7955,10 +8990,7 @@
       "Visits": {
         "required": [
           "id",
-          "start_date",
-          "user_id",
-          "city_id",
-          "travel_mode_id"
+          "start_date"
         ],
         "properties": {
           "id": {
@@ -7972,14 +9004,196 @@
             "type": "string",
             "format": "date"
           },
-          "user_id": {
-            "type": "integer"
+          "tourist_id": {
+            "required": [
+              "id",
+              "email",
+              "phone",
+              "name",
+              "lastname",
+              "birth_date",
+              "gender"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "birth_date": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "M",
+                  "F",
+                  "O"
+                ]
+              },
+              "city_id": {
+                "type": "string"
+              },
+              "visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "city_id": {
-            "type": "integer"
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "province_id": {
+                "type": "string"
+              },
+              "visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourists": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "travel_mode_id": {
-            "type": "integer"
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "travel_companions": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "lastname",
+                "birth_date",
+                "gender"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "lastname": {
+                  "type": "string"
+                },
+                "birth_date": {
+                  "type": "string"
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "M",
+                    "F",
+                    "O"
+                  ]
+                },
+                "relation_id": {
+                  "type": "string"
+                },
+                "visit_id": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -7989,10 +9203,7 @@
       },
       "NewVisits": {
         "required": [
-          "start_date",
-          "user_id",
-          "city_id",
-          "travel_mode_id"
+          "start_date"
         ],
         "properties": {
           "start_date": {
@@ -8003,14 +9214,20 @@
             "type": "string",
             "format": "date"
           },
-          "user_id": {
-            "type": "integer"
+          "tourist_id": {
+            "type": "string"
           },
           "city_id": {
-            "type": "integer"
+            "type": "string"
           },
           "travel_mode_id": {
-            "type": "integer"
+            "type": "string"
+          },
+          "travel_companions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",

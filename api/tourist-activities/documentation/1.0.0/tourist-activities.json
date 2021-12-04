@@ -307,12 +307,87 @@
                 "type": "string"
               }
             }
+          },
+          "tourist_id": {
+            "required": [
+              "id",
+              "email",
+              "phone",
+              "name",
+              "lastname",
+              "birth_date",
+              "gender"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "birth_date": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "M",
+                  "F",
+                  "O"
+                ]
+              },
+              "city_id": {
+                "type": "string"
+              },
+              "visits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tourist_places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
       "NewTourist-activities": {
         "properties": {
           "activity_id": {
+            "type": "string"
+          },
+          "tourist_id": {
             "type": "string"
           },
           "created_by": {
