@@ -2,14 +2,6 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/cities",
-      "handler": "cities.find",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
       "path": "/cities/:id",
       "handler": "cities.findOne",
       "config": {
