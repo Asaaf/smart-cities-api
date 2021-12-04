@@ -31,22 +31,6 @@
       "config": {
         "policies": []
       }
-    },
-    {
-      "method": "PUT",
-      "path": "/travel-companions/:id",
-      "handler": "travel-companions.update",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "DELETE",
-      "path": "/travel-companions/:id",
-      "handler": "travel-companions.delete",
-      "config": {
-        "policies": []
-      }
     }
   ]
 }
