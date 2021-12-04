@@ -10,11 +10,8 @@
     "strapi": "strapi"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "joi": "^17.5.0",
-=======
     "jsonwebtoken": "^8.5.1",
->>>>>>> 51c367989f5276e57670cb42847564b7f1abb70a
+    "joi": "^17.5.0",
     "knex": "0.21.18",
     "mysql": "2.18.1",
     "strapi": "3.6.8",
