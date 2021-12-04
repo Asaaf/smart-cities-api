@@ -2,16 +2,8 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/provinces",
-      "handler": "provinces.find",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
       "path": "/provinces/:id/cities",
-      "handler": "provinces.findOne",
+      "handler": "provinces.cities",
       "config": {
         "policies": []
       }

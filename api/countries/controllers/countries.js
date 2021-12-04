@@ -5,14 +5,7 @@
  * to customize this controller
  */
 
-module.exports = { 
-
-  find: async(ctx) => {
-    const countries = await strapi.query('countries').model.fetchAll({
-      columns: ['id', 'name'],
-    });
-    return countries;
-  },
+module.exports = {
 
   provinces: async(ctx) => {
     const { id } = ctx.params;

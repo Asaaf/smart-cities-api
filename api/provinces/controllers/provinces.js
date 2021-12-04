@@ -5,4 +5,11 @@
  * to customize this controller
  */
 
-module.exports = {};
+module.exports = {
+
+    cities: async(ctx) => {
+        const { id } = ctx.params;
+        const country = await strapi.query('provinces').findOne({ id }, [ 'cities' ]);
+        return country;
+    }
+};
