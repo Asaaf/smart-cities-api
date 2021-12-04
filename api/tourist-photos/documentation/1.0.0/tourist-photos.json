@@ -1,0 +1,170 @@
+{
+  "paths": {
+    "/tourist-photos": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new tourist-photos record",
+        "responses": {
+          "200": {
+            "description": "Retrieve tourist-photos document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tourist-photos"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTourist-photos"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Tourist-photos": {
+        "required": [
+          "id",
+          "photo_private_url",
+          "photo_public_url",
+          "photo_date",
+          "photo_code"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "photo_private_url": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "photo_public_url": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "photo_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "photo_code": {
+            "type": "string",
+            "maxLength": 45
+          },
+          "device_id": {
+            "required": [
+              "id",
+              "device_id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "device_id": {
+                "type": "string"
+              },
+              "tourist_photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "NewTourist-photos": {
+        "required": [
+          "photo_private_url",
+          "photo_public_url",
+          "photo_date",
+          "photo_code"
+        ],
+        "properties": {
+          "photo_private_url": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "photo_public_url": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "photo_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "photo_code": {
+            "type": "string",
+            "maxLength": 45
+          },
+          "device_id": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "tags": []
+}

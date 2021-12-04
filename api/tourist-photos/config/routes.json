@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/tourist-photos",
+      "handler": "tourist-photos.create",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

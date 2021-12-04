@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tourist_photos",
+  "info": {
+    "name": "tourist_photos"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "photo_private_url": {
+      "type": "text",
+      "required": true,
+      "maxLength": 500
+    },
+    "photo_public_url": {
+      "type": "text",
+      "required": true,
+      "maxLength": 500
+    },
+    "photo_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "photo_code": {
+      "type": "text",
+      "required": true,
+      "maxLength": 45
+    },
+    "device_id": {
+      "model": "devices",
+      "via": "tourist_photos"
+    }
+  }
+}
