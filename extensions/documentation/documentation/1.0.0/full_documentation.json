@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/04/2021 4:15:35 PM"
+    "x-generation-date": "12/04/2021 5:22:08 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6523,13 +6523,10 @@
           "device_id": {
             "required": [
               "id",
-              "device_id"
+              "serial"
             ],
             "properties": {
               "id": {
-                "type": "string"
-              },
-              "device_id": {
                 "type": "string"
               },
               "tourist_photos": {
@@ -6543,6 +6540,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "serial": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"
@@ -6660,13 +6660,10 @@
       "Devices": {
         "required": [
           "id",
-          "device_id"
+          "serial"
         ],
         "properties": {
           "id": {
-            "type": "string"
-          },
-          "device_id": {
             "type": "string"
           },
           "tourist_photos": {
@@ -6743,6 +6740,9 @@
               }
             }
           },
+          "serial": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -6751,12 +6751,9 @@
       },
       "NewDevices": {
         "required": [
-          "device_id"
+          "serial"
         ],
         "properties": {
-          "device_id": {
-            "type": "string"
-          },
           "tourist_photos": {
             "type": "array",
             "items": {
@@ -6768,6 +6765,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "serial": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -7417,13 +7417,10 @@
           "device_id": {
             "required": [
               "id",
-              "device_id"
+              "serial"
             ],
             "properties": {
               "id": {
-                "type": "string"
-              },
-              "device_id": {
                 "type": "string"
               },
               "tourist_photos": {
@@ -7437,6 +7434,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "serial": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"

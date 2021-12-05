@@ -21,8 +21,8 @@
       "required": true
     },
     "device_id": {
-      "model": "devices",
-      "via": "control_visits"
+      "via": "control_visits",
+      "model": "devices"
     }
   }
 }

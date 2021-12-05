@@ -32,8 +32,8 @@
       "maxLength": 45
     },
     "device_id": {
-      "model": "devices",
-      "via": "tourist_photos"
+      "via": "tourist_photos",
+      "model": "devices"
     },
     "tourist_id": {
       "via": "tourist_photos",

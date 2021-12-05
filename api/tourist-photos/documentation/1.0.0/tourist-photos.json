@@ -105,13 +105,10 @@
           "device_id": {
             "required": [
               "id",
-              "device_id"
+              "serial"
             ],
             "properties": {
               "id": {
-                "type": "string"
-              },
-              "device_id": {
                 "type": "string"
               },
               "tourist_photos": {
@@ -125,6 +122,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "serial": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"
