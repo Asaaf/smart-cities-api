@@ -10,7 +10,8 @@ const validator = require('./validator');
 module.exports = {
     async associate(ctx) {
         validator.emailValidation(ctx);
-        // TODO :: validate email
+        const { email } = ctx.request.body;
+        console.log('email', email);
         validator.validation(ctx, true);
         return ctx.request.body;
     },
