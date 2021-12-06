@@ -1,4 +1,4 @@
-const Joi = require('joi');
+const Joi = require('joi').extend(require('@joi/date'));;
 const options = {
     errors: {
         wrap: {
@@ -20,19 +20,32 @@ const emailValidation = (ctx) => {
     }
 }
 
-const validation = (ctx, defaultFields = false) => {
+const visitValidation = (ctx) => {
     const rules = {
-        city_id: Joi.number().integer().required(),
         travel_mode_id: Joi.number().integer().required(),
         tourist_photo_id: Joi.number().integer().required(),
+        city_id_to_visit: Joi.number().integer().required(),
+        start_date: Joi.date().format('YYYY-MM-DD').required(),
+        end_date: Joi.date().format('YYYY-MM-DD').required(),
+
     };
-    if (defaultFields) {
-        rules.phone = Joi.string().required();
-        rules.name = Joi.string().required();
-        rules.lastname = Joi.string().required();
-        rules.birth_date = Joi.string().required();
-        rules.gender = Joi.string().required().valid('M','F','O');
+    const schema = Joi.object().keys(rules);
+    const input = ctx.request.body;
+    const validation = schema.validate(input, options);
+    if (validation.error) {
+        ctx.badRequest(validation.error.details[0].message);
     }
+};
+
+const registerValidation = (ctx) => {
+    const rules = {
+        phone: Joi.string().required(),
+        name: Joi.string().required(),
+        lastname: Joi.string().required(),
+        birth_date: Joi.string().required(),
+        gender: Joi.string().required().valid('M','F','O'),
+        city_id: Joi.number().integer().required(),
+    };
     const schema = Joi.object().keys(rules);
     const input = ctx.request.body;
     const validation = schema.validate(input, options);
@@ -43,5 +56,6 @@ const validation = (ctx, defaultFields = false) => {
 
 module.exports = {
     emailValidation,
-    validation,
+    visitValidation,
+    registerValidation,
 }
