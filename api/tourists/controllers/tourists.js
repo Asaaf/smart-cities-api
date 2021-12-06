@@ -5,4 +5,13 @@
  * to customize this controller
  */
 
-module.exports = {};
+module.exports = {
+
+    findOne: async(ctx) => {
+        const { email } = ctx.params;
+        const tourist = await strapi.query('tourists').findOne({ email });
+        return {
+            exists: !!tourist,
+        }
+      }
+};

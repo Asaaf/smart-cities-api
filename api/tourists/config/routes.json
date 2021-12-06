@@ -2,8 +2,8 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/tourists",
-      "handler": "tourists.find",
+      "path": "/tourists/:email",
+      "handler": "tourists.findOne",
       "config": {
         "policies": []
       }
