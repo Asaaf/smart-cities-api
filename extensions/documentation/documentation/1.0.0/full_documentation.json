@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/05/2021 9:20:28 PM"
+    "x-generation-date": "12/06/2021 9:21:11 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -497,10 +497,10 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new control-visits record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve control-visits document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -546,7 +546,7 @@
         },
         "summary": "",
         "tags": [
-          "Control-visits"
+          "Unclassified"
         ],
         "requestBody": {
           "description": "",
@@ -554,7 +554,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewControl-visits"
+                "$ref": "#/components/schemas/NewUnclassified"
               }
             }
           }
@@ -2445,6 +2445,73 @@
                     "type": "string"
                   }
                 }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tourist-photos": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new tourist-photos record",
+        "responses": {
+          "200": {
+            "description": "Retrieve tourist-photos document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tourist-photos"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTourist-photos"
               }
             }
           }
@@ -8694,6 +8761,9 @@
     },
     {
       "name": "Relations"
+    },
+    {
+      "name": "Unclassified"
     },
     {
       "name": "Tourists"

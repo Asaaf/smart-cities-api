@@ -5,6 +5,7 @@
  * to customize this controller
  */
 
+const JWT = require('jsonwebtoken');
 const validator = require('./validator');
 
 module.exports = {
@@ -31,4 +32,28 @@ module.exports = {
         tourist.visit = visit;
         return tourist;
     },
+
+    async create(ctx) {
+      validator.touristPhotoValidation(ctx);
+      const BEARER = "Bearer";
+      const split_token = ctx.request.header.device_token.split(" ");
+      if (split_token.length != 2 || split_token[0] != BEARER) {
+        ctx.response.forbidden("Invalid token");
+      }
+      else {
+        const token  = split_token[1];
+        const device = JWT.decode(token);
+        const tourist_photo = await strapi.services["tourist-photos"].create({
+          device_id: device.device_id,
+          photo_code: ctx.request.body.photo_code,
+          photo_date: ctx.request.body.photo_date,
+          photo_public_url: '',
+          photo_private_url: ''
+        });
+        if(tourist_photo) {
+          ctx.response.status = 201;
+          return ctx.response.body = tourist_photo;
+        }
+      }
+    }
 };

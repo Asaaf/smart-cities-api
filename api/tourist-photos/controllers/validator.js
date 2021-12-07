@@ -1,4 +1,4 @@
-const Joi = require('joi').extend(require('@joi/date'));;
+const Joi = require('joi').extend(require('@joi/date'));
 const options = {
     errors: {
         wrap: {
@@ -54,8 +54,22 @@ const registerValidation = (ctx) => {
     }
 };
 
+const touristPhotoValidation = (ctx) => {
+  const rules = {
+    photo_code: Joi.string().required(),
+    photo_date: Joi.date().iso().required()
+  };
+  const schema = Joi.object().keys(rules);
+  const input = ctx.request.body;
+  const validation = schema.validate(input, options);
+  if (validation.error) {
+      ctx.badRequest(validation.error.details[0].message);
+  }
+};
+
 module.exports = {
     emailValidation,
     visitValidation,
     registerValidation,
+    touristPhotoValidation
 }
