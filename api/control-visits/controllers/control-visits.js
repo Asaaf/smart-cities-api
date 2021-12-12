@@ -19,12 +19,18 @@ module.exports = {
     }
     else {
       const token  = split_token[1];
-      const device = JWT.decode(token);
-      const visitor = {'device_id': device.device_id, 'count': ctx.request.body.count, 'date_count': ctx.request.body.date_count};
-      const control_visit = await strapi.services["control-visits"].create(visitor);
-      if(control_visit) {
-        ctx.response.status = 201;
-        return ctx.response.body = control_visit;
+      const payload = JWT.decode(token);
+      const device = await strapi.services.devices.findOne({id: payload.device_id});
+      if (device) {
+        const visitor = {'device_id': device.id, 'count': ctx.request.body.count, 'date_count': ctx.request.body.date_count};
+        const control_visit = await strapi.services["control-visits"].create(visitor);
+        if(control_visit) {
+          ctx.response.status = 201;
+          return ctx.response.body = control_visit;
+        }
+      }
+      else {
+        return ctx.response.badRequest("Invalid device");
       }
     }
 
