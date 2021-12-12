@@ -42,17 +42,23 @@ module.exports = {
       }
       else {
         const token  = split_token[1];
-        const device = JWT.decode(token);
-        const tourist_photo = await strapi.services["tourist-photos"].create({
-          device_id: device.device_id,
-          photo_code: ctx.request.body.photo_code,
-          photo_date: ctx.request.body.photo_date,
-          photo_public_url: '',
-          photo_private_url: ''
-        });
-        if(tourist_photo) {
-          ctx.response.status = 201;
-          return ctx.response.body = tourist_photo;
+        const payload = JWT.decode(token);
+        const device = await strapi.services.devices.findOne({id: payload.device_id});
+        if (device) {
+          const tourist_photo = await strapi.services["tourist-photos"].create({
+            device_id: device.id,
+            photo_code: ctx.request.body.photo_code,
+            photo_date: ctx.request.body.photo_date,
+            photo_public_url: '',
+            photo_private_url: ''
+          });
+          if(tourist_photo) {
+            ctx.response.status = 201;
+            return ctx.response.body = tourist_photo;
+          }
+        }
+        else {
+          return ctx.response.badRequest("Invalid device");
         }
       }
     }
