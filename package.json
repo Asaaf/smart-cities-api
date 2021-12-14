@@ -2,7 +2,7 @@
   "name": "smart-cities-backend",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "smart cities project",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -28,7 +28,7 @@
     "strapi-utils": "3.6.8"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Asaaf"
   },
   "strapi": {
     "uuid": "5d7b2afc-5cdb-4aeb-affc-12ea5fa0a82c"

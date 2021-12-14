@@ -8,36 +8,36 @@ const options = {
     allowUnknown: true,
 };
 
-const emailValidation = (ctx) => {
+const _validate = async (input, rules) => {
+    const schema = Joi.object().keys(rules);
+    const validation = await schema.validate(input, options);
+    if (validation.error) {
+        return validation.error.details[0].message;
+    }
+    return null;
+};
+
+const emailValidation = async (ctx) => {
     const rules = {
         email: Joi.string().required(),
     }
-    const schema = Joi.object().keys(rules);
-    const input = ctx.request.body;
-    const validation = schema.validate(input, options);
-    if (validation.error) {
-        ctx.badRequest(validation.error.details[0].message);
-    }
-}
+    const validation = await _validate(ctx.request.body, rules);
+    return validation;
+};
 
-const visitValidation = (ctx) => {
+const visitValidation = async (ctx) => {
     const rules = {
         travel_mode_id: Joi.number().integer().required(),
         tourist_photo_id: Joi.number().integer().required(),
         city_id_to_visit: Joi.number().integer().required(),
         start_date: Joi.date().format('YYYY-MM-DD').required(),
         end_date: Joi.date().format('YYYY-MM-DD').required(),
-
     };
-    const schema = Joi.object().keys(rules);
-    const input = ctx.request.body;
-    const validation = schema.validate(input, options);
-    if (validation.error) {
-        ctx.badRequest(validation.error.details[0].message);
-    }
+    const validation = await _validate(ctx.request.body, rules);
+    return validation;
 };
 
-const registerValidation = (ctx) => {
+const registerValidation = async (ctx) => {
     const rules = {
         phone: Joi.string().required(),
         name: Joi.string().required(),
@@ -45,13 +45,11 @@ const registerValidation = (ctx) => {
         birth_date: Joi.string().required(),
         gender: Joi.string().required().valid('M','F','O'),
         city_id: Joi.number().integer().required(),
+        activities: Joi.array().items(Joi.number()),
+        places: Joi.array().items(Joi.number()),
     };
-    const schema = Joi.object().keys(rules);
-    const input = ctx.request.body;
-    const validation = schema.validate(input, options);
-    if (validation.error) {
-        ctx.badRequest(validation.error.details[0].message);
-    }
+    const validation = await _validate(ctx.request.body, rules);
+    return validation;
 };
 
 const touristPhotoValidation = (ctx) => {
@@ -67,9 +65,10 @@ const touristPhotoValidation = (ctx) => {
   }
 };
 
+
 module.exports = {
     emailValidation,
     visitValidation,
     registerValidation,
-    touristPhotoValidation
+    touristPhotoValidation,
 }
