@@ -35,6 +35,9 @@
       "autoPopulate": false,
       "via": "visit_id",
       "collection": "travel-companions"
+    },
+    "companions": {
+      "type": "integer"
     }
   }
 }
