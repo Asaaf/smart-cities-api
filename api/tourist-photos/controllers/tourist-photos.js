@@ -8,6 +8,35 @@
 const JWT = require('jsonwebtoken');
 const validator = require('./validator');
 
+const storeActivities = (activities, tourist)  => {
+  for (let i = 0; i < activities.length; i++) {
+    strapi.services['tourist-activities'].create({
+      tourist_id: tourist.id,
+      activity_id: activities[i],
+    });
+  }
+};
+
+const storePlacesOfInterest = (places_of_interest, tourist) => {
+  for (let i = 0; i < places_of_interest.length; i++) {
+    strapi.services['tourist-places'].create({
+      tourist_id: tourist.id,
+      activity_id: places_of_interest[i],
+      interested: true,
+    });
+  }
+};
+
+const storePlacesVisited = (places_visited, tourist) => {
+  for (let i = 0; i < places_visited.length; i++) {
+    strapi.services['tourist-places'].create({
+      tourist_id: tourist.id,
+      activity_id: places_visited[i],
+      visited: true,
+    });
+  }
+}
+
 module.exports = {
     async associate(ctx) {
         const errorInEmailValidation = await validator.emailValidation(ctx);
@@ -30,28 +59,17 @@ module.exports = {
             if (errorInRegisterValidation) {
               return ctx.badRequest(errorInRegisterValidation);
             }
-            const { phone, name, lastname, birth_date, gender, city_id } = ctx.request.body;
+            const { phone, name, lastname, birth_date, gender, city_id, activities, places_of_interest, places_visited } = ctx.request.body;
             tourist = await strapi.services.tourists.create({ email, phone, name, lastname, birth_date, gender, city_id });
-            for (let i = 0; activites.length; i++) {
-              await strapi.services.tourist_activities.create({
-                tourist_id: tourist.id,
-                activity_id: activites[i],
-              });
-            }
-            for (let i = 0; places_of_interest.length; i++) {
-              await strapi.services.places.create({
-                tourist_id: tourist.id,
-                activity_id: places_of_interest[i],
-                interested: true,
-              });
-            }
 
-            for (let i = 0; places_visited.length; i++) {
-              await strapi.services.tourist_places.create({
-                tourist_id: tourist.id,
-                activity_id: places_visited[i],
-                visited: true,
-              });
+            if (activities) {
+              storeActivities(activities, tourist);
+            }
+            if (places_of_interest) {
+              storePlacesOfInterest(places_of_interest, tourist);
+            }
+            if (places_visited) {
+              storePlacesVisited(places_visited, tourist);
             }
         }
 
