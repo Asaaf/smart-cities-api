@@ -234,7 +234,7 @@
                 "device_id": {
                   "type": "string"
                 },
-                "tourist_id": {
+                "visit_id": {
                   "type": "string"
                 },
                 "created_by": {

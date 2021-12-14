@@ -390,12 +390,6 @@
                   "type": "string"
                 }
               },
-              "tourist_photos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "tourist_places": {
                 "type": "array",
                 "items": {

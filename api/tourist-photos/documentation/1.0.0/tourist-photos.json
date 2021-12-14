@@ -204,69 +204,38 @@
               }
             }
           },
-          "tourist_id": {
+          "visit_id": {
             "required": [
               "id",
-              "email",
-              "phone",
-              "name",
-              "lastname",
-              "birth_date",
-              "gender"
+              "start_date"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "email": {
+              "start_date": {
                 "type": "string"
               },
-              "phone": {
+              "end_date": {
                 "type": "string"
               },
-              "name": {
+              "tourist_id": {
                 "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "birth_date": {
-                "type": "string"
-              },
-              "gender": {
-                "type": "string",
-                "enum": [
-                  "M",
-                  "F",
-                  "O"
-                ]
               },
               "city_id": {
                 "type": "string"
               },
-              "visits": {
+              "travel_mode_id": {
+                "type": "string"
+              },
+              "travel_companions": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "tourist_activities": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "tourist_photos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "tourist_places": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "published_at": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -305,7 +274,7 @@
           "device_id": {
             "type": "string"
           },
-          "tourist_id": {
+          "visit_id": {
             "type": "string"
           },
           "created_by": {

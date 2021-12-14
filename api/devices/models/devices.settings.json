@@ -13,8 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "tourist_photos": {
-      "autoPopulate": false,
       "via": "device_id",
+      "autoPopulate": false,
       "collection": "tourist-photos"
     },
     "control_visits": {
