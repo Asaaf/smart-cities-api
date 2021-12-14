@@ -10,18 +10,32 @@ const validator = require('./validator');
 
 module.exports = {
     async associate(ctx) {
-        validator.emailValidation(ctx);
+        const errorInEmailValidation = await validator.emailValidation(ctx);
+
+        if (errorInEmailValidation) {
+          return ctx.badRequest(errorInEmailValidation);
+        }
+
+        const errorInVisitValidation = await validator.visitValidation(ctx);
+
+        if (errorInVisitValidation) {
+          return ctx.badRequest(errorInVisitValidation);
+        }
+
         const { email } = ctx.request.body;
         let tourist = await strapi.services.tourists.findOne({ email });
-        let visit = null;
+
         if (!tourist) {
-            validator.registerValidation(ctx);
+            const errorInRegisterValidation = await validator.registerValidation(ctx);
+            if (errorInRegisterValidation) {
+              return ctx.badRequest(errorInRegisterValidation);
+            }
             const { phone, name, lastname, birth_date, gender, city_id } = ctx.request.body;
             tourist = await strapi.services.tourists.create({ email, phone, name, lastname, birth_date, gender, city_id });
         }
-        validator.visitValidation(ctx);
+
         const { travel_mode_id, tourist_photo_id, city_id_to_visit, start_date, end_date } = ctx.request.body;
-        visit = await strapi.services.visits.create({
+        const visit = await strapi.services.visits.create({
             tourist_id: tourist.id,
             travel_mode_id,
             tourist_photo_id,
