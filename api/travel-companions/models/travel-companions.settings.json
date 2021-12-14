@@ -40,8 +40,8 @@
       "via": "travel_companions"
     },
     "visit_id": {
-      "model": "visits",
-      "via": "travel_companions"
+      "via": "travel_companions",
+      "model": "visits"
     }
   }
 }

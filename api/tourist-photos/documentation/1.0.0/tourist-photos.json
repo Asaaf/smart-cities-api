@@ -206,8 +206,7 @@
           },
           "visit_id": {
             "required": [
-              "id",
-              "start_date"
+              "id"
             ],
             "properties": {
               "id": {
