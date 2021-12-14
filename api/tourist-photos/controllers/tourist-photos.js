@@ -69,7 +69,10 @@ module.exports = {
     },
 
     async create(ctx) {
-      validator.touristPhotoValidation(ctx);
+      const errorInTouristPhoto = await validator.touristPhotoValidation(ctx);
+      if(errorInTouristPhoto) {
+        return ctx.badRequest(errorInTouristPhoto);
+      }
       const BEARER = "Bearer";
       const split_token = ctx.request.header.device_token.split(" ");
       if (split_token.length != 2 || split_token[0] != BEARER) {

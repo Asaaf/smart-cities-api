@@ -11,7 +11,10 @@ const validator = require('./validator');
 module.exports = {
 
   async create(ctx) {
-    validator.controlVisitValidation(ctx);
+    const errorInControlVisit = await validator.controlVisitValidation(ctx);
+    if(errorInControlVisit) {
+      return ctx.badRequest(errorInControlVisit);
+    }
     const BEARER = "Bearer";
     const split_token = ctx.request.header.device_token.split(" ");
     if (split_token.length != 2 || split_token[0] != BEARER) {

@@ -8,17 +8,22 @@ const options = {
     allowUnknown: true,
 };
 
-const controlVisitValidation = (ctx) => {
+const _validate = async (input, rules) => {
+    const schema = Joi.object().keys(rules);
+    const validation = await schema.validate(input, options);
+    if (validation.error) {
+        return validation.error.details[0].message;
+    }
+    return null;
+};
+
+const controlVisitValidation = async (ctx) => {
     const rules = {
         count: Joi.number().integer().required(),
         date_count: Joi.date().iso().required()
     };
-    const schema = Joi.object().keys(rules);
-    const input = ctx.request.body;
-    const validation = schema.validate(input, options);
-    if (validation.error) {
-        ctx.badRequest(validation.error.details[0].message);
-    }
+    const validation = await _validate(ctx.request.body, rules);
+    return validation;
 };
 
 module.exports = {

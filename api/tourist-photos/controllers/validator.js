@@ -53,17 +53,13 @@ const registerValidation = async (ctx) => {
     return validation;
 };
 
-const touristPhotoValidation = (ctx) => {
+const touristPhotoValidation = async (ctx) => {
   const rules = {
     photo_code: Joi.string().required(),
     photo_date: Joi.date().iso().required()
   };
-  const schema = Joi.object().keys(rules);
-  const input = ctx.request.body;
-  const validation = schema.validate(input, options);
-  if (validation.error) {
-      ctx.badRequest(validation.error.details[0].message);
-  }
+  const validation = await _validate(ctx.request.body, rules);
+  return validation;
 };
 
 
