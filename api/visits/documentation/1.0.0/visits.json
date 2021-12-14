@@ -323,8 +323,7 @@
     "schemas": {
       "Visits": {
         "required": [
-          "id",
-          "start_date"
+          "id"
         ],
         "properties": {
           "id": {
@@ -530,9 +529,6 @@
         }
       },
       "NewVisits": {
-        "required": [
-          "start_date"
-        ],
         "properties": {
           "start_date": {
             "type": "string",

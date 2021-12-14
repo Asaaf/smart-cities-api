@@ -213,8 +213,7 @@
             "type": "array",
             "items": {
               "required": [
-                "id",
-                "start_date"
+                "id"
               ],
               "properties": {
                 "id": {

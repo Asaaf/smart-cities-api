@@ -66,7 +66,14 @@ module.exports = {
               return ctx.badRequest(errorInRegisterValidation);
             }
             const { phone, name, lastname, birth_date, gender, city_id, activities, places_of_interest, places_visited } = ctx.request.body;
-            tourist = await strapi.services.tourists.create({ email, phone, name, lastname, birth_date, gender, city_id });
+            tourist = await strapi.services.tourists.create({
+              email,
+              phone: phone || '',
+              name: name || '',
+              lastname: lastname || '',
+              birth_date,
+              gender: gender || '', 
+              city_id });
 
             if (activities) {
               storeActivities(activities, tourist);
@@ -85,14 +92,14 @@ module.exports = {
             tourist_id: tourist.id,
             travel_mode_id: travel_mode_id || null,
             city_id: city_id_to_visit,
-            start_date,
-            end_date,
+            start_date: start_date || null,
+            end_date: end_date || null,
+            companions,
         });
 
-        await strapi.services['tourist-photos'].update({id: touristPhoto.id}, {tourist_id})
+        await strapi.services['tourist-photos'].update({id: touristPhoto.id}, { visit_id : visit.id });
 
         touristPhoto.tourist_id = tourist.id;
-
         tourist.visit = visit;
         return tourist;
     },

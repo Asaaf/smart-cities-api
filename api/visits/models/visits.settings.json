@@ -14,7 +14,7 @@
   "attributes": {
     "start_date": {
       "type": "date",
-      "required": true
+      "required": false
     },
     "end_date": {
       "type": "date"
@@ -32,8 +32,8 @@
       "via": "visits"
     },
     "travel_companions": {
-      "via": "visit_id",
       "autoPopulate": false,
+      "via": "visit_id",
       "collection": "travel-companions"
     }
   }

@@ -27,11 +27,12 @@ const emailValidation = async (ctx) => {
 
 const visitValidation = async (ctx) => {
     const rules = {
-        travel_mode_id: Joi.number().integer(),
+        companions: Joi.number().integer().required(),
         tourist_photo_code: Joi.string().guid({ version: [ 'uuidv4' ] }).required(),
         city_id_to_visit: Joi.number().integer().required(),
-        start_date: Joi.date().format('YYYY-MM-DD').required(),
-        end_date: Joi.date().format('YYYY-MM-DD').required(),
+        travel_mode_id: Joi.number().integer(),
+        start_date: Joi.date().format('YYYY-MM-DD'),
+        end_date: Joi.date().format('YYYY-MM-DD'),
     };
     const validation = await _validate(ctx.request.body, rules);
     return validation;
@@ -39,11 +40,11 @@ const visitValidation = async (ctx) => {
 
 const registerValidation = async (ctx) => {
     const rules = {
-        phone: Joi.string().required(),
-        name: Joi.string().required(),
-        lastname: Joi.string().required(),
+        phone: Joi.string(),
+        name: Joi.string(),
+        lastname: Joi.string(),
         birth_date: Joi.string().required(),
-        gender: Joi.string().required().valid('M','F','O'),
+        gender: Joi.string().valid('M','F','O'),
         city_id: Joi.number().integer().required(),
         activities: Joi.array().items(Joi.number()),
         places_of_interest: Joi.array().items(Joi.number()),
