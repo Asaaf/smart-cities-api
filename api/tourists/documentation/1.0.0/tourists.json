@@ -282,47 +282,6 @@
               }
             }
           },
-          "tourist_photos": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "photo_private_url",
-                "photo_public_url",
-                "photo_date",
-                "photo_code"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "photo_private_url": {
-                  "type": "string"
-                },
-                "photo_public_url": {
-                  "type": "string"
-                },
-                "photo_date": {
-                  "type": "string"
-                },
-                "photo_code": {
-                  "type": "string"
-                },
-                "device_id": {
-                  "type": "string"
-                },
-                "tourist_id": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "tourist_places": {
             "type": "array",
             "items": {
@@ -404,12 +363,6 @@
             }
           },
           "tourist_activities": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "tourist_photos": {
             "type": "array",
             "items": {
               "type": "string"

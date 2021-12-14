@@ -35,9 +35,8 @@
       "via": "tourist_photos",
       "model": "devices"
     },
-    "tourist_id": {
-      "via": "tourist_photos",
-      "model": "tourists"
+    "visit_id": {
+      "model": "visits"
     }
   }
 }

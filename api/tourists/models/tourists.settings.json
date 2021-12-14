@@ -59,11 +59,6 @@
       "autoPopulate": false,
       "collection": "tourist-activities"
     },
-    "tourist_photos": {
-      "via": "tourist_id",
-      "autoPopulate": false,
-      "collection": "tourist-photos"
-    },
     "tourist_places": {
       "via": "tourist_id",
       "autoPopulate": false,

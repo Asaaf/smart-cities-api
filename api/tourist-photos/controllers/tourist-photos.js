@@ -51,7 +51,13 @@ module.exports = {
           return ctx.badRequest(errorInVisitValidation);
         }
 
-        const { email } = ctx.request.body;
+        const { email, tourist_photo_code } = ctx.request.body;
+        const touristPhoto = await strapi.services['tourist-photos'].findOne({photo_code : tourist_photo_code});
+
+        if (!touristPhoto) {
+          return ctx.badRequest('the photo code does not exists');
+        }
+
         let tourist = await strapi.services.tourists.findOne({ email });
 
         if (!tourist) {
@@ -73,15 +79,20 @@ module.exports = {
             }
         }
 
-        const { travel_mode_id, tourist_photo_id, city_id_to_visit, start_date, end_date } = ctx.request.body;
+        const { travel_mode_id, city_id_to_visit, start_date, end_date } = ctx.request.body;
+
         const visit = await strapi.services.visits.create({
             tourist_id: tourist.id,
             travel_mode_id: travel_mode_id || null,
-            tourist_photo_id,
             city_id: city_id_to_visit,
             start_date,
             end_date,
         });
+
+        await strapi.services['tourist-photos'].update({id: touristPhoto.id}, {tourist_id})
+
+        touristPhoto.tourist_id = tourist.id;
+
         tourist.visit = visit;
         return tourist;
     },

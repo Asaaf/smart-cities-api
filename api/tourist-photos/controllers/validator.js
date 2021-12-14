@@ -28,7 +28,7 @@ const emailValidation = async (ctx) => {
 const visitValidation = async (ctx) => {
     const rules = {
         travel_mode_id: Joi.number().integer(),
-        tourist_photo_id: Joi.number().integer().required(),
+        tourist_photo_code: Joi.string().guid({ version: [ 'uuidv4' ] }).required(),
         city_id_to_visit: Joi.number().integer().required(),
         start_date: Joi.date().format('YYYY-MM-DD').required(),
         end_date: Joi.date().format('YYYY-MM-DD').required(),
