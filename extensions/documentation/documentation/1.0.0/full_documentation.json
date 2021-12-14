@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/13/2021 7:09:45 PM"
+    "x-generation-date": "12/13/2021 8:10:06 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6914,8 +6914,7 @@
             "type": "array",
             "items": {
               "required": [
-                "id",
-                "interested"
+                "id"
               ],
               "properties": {
                 "id": {
@@ -7503,8 +7502,7 @@
       },
       "Tourist-places": {
         "required": [
-          "id",
-          "interested"
+          "id"
         ],
         "properties": {
           "id": {
@@ -7635,9 +7633,6 @@
         }
       },
       "NewTourist-places": {
-        "required": [
-          "interested"
-        ],
         "properties": {
           "visited": {
             "type": "boolean"
@@ -7856,8 +7851,7 @@
             "type": "array",
             "items": {
               "required": [
-                "id",
-                "interested"
+                "id"
               ],
               "properties": {
                 "id": {

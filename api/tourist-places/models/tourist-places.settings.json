@@ -18,7 +18,7 @@
     },
     "interested": {
       "type": "boolean",
-      "required": true
+      "required": false
     },
     "tourist_id": {
       "via": "tourist_places",

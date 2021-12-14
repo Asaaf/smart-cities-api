@@ -332,8 +332,7 @@
     "schemas": {
       "Tourist-places": {
         "required": [
-          "id",
-          "interested"
+          "id"
         ],
         "properties": {
           "id": {
@@ -464,9 +463,6 @@
         }
       },
       "NewTourist-places": {
-        "required": [
-          "interested"
-        ],
         "properties": {
           "visited": {
             "type": "boolean"
