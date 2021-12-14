@@ -27,7 +27,7 @@ const emailValidation = async (ctx) => {
 
 const visitValidation = async (ctx) => {
     const rules = {
-        travel_mode_id: Joi.number().integer().required(),
+        travel_mode_id: Joi.number().integer(),
         tourist_photo_id: Joi.number().integer().required(),
         city_id_to_visit: Joi.number().integer().required(),
         start_date: Joi.date().format('YYYY-MM-DD').required(),
@@ -46,7 +46,8 @@ const registerValidation = async (ctx) => {
         gender: Joi.string().required().valid('M','F','O'),
         city_id: Joi.number().integer().required(),
         activities: Joi.array().items(Joi.number()),
-        places: Joi.array().items(Joi.number()),
+        places_of_interest: Joi.array().items(Joi.number()),
+        places_visited: Joi.array().items(Joi.number()),
     };
     const validation = await _validate(ctx.request.body, rules);
     return validation;

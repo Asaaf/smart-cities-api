@@ -284,8 +284,7 @@
             "type": "array",
             "items": {
               "required": [
-                "id",
-                "interested"
+                "id"
               ],
               "properties": {
                 "id": {

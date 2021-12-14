@@ -32,12 +32,33 @@ module.exports = {
             }
             const { phone, name, lastname, birth_date, gender, city_id } = ctx.request.body;
             tourist = await strapi.services.tourists.create({ email, phone, name, lastname, birth_date, gender, city_id });
+            for (let i = 0; activites.length; i++) {
+              await strapi.services.tourist_activities.create({
+                tourist_id: tourist.id,
+                activity_id: activites[i],
+              });
+            }
+            for (let i = 0; places_of_interest.length; i++) {
+              await strapi.services.places.create({
+                tourist_id: tourist.id,
+                activity_id: places_of_interest[i],
+                interested: true,
+              });
+            }
+
+            for (let i = 0; places_visited.length; i++) {
+              await strapi.services.tourist_places.create({
+                tourist_id: tourist.id,
+                activity_id: places_visited[i],
+                visited: true,
+              });
+            }
         }
 
         const { travel_mode_id, tourist_photo_id, city_id_to_visit, start_date, end_date } = ctx.request.body;
         const visit = await strapi.services.visits.create({
             tourist_id: tourist.id,
-            travel_mode_id,
+            travel_mode_id: travel_mode_id || null,
             tourist_photo_id,
             city_id: city_id_to_visit,
             start_date,
