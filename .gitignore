@@ -115,3 +115,9 @@ build
 
 # mysql workbench
 database_model/model.mwb.bak
+
+# acces-key-pair
+*.pem
+
+# Makefile
+Makefile
