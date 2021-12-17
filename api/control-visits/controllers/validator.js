@@ -19,8 +19,7 @@ const _validate = async (input, rules) => {
 
 const controlVisitValidation = async (ctx) => {
     const rules = {
-        count: Joi.number().integer().required(),
-        date_count: Joi.date().iso().required()
+        count: Joi.number().integer().required()
     };
     const validation = await _validate(ctx.request.body, rules);
     return validation;
