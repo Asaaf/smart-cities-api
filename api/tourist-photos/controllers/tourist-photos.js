@@ -39,6 +39,9 @@ const storePlacesVisited = (places_visited, tourist) => {
 
 module.exports = {
     async associate(ctx) {
+        ctx.request.body.activities = JSON.parse(ctx.request.body.activities);
+        ctx.request.body.places_of_interest = JSON.parse(ctx.request.body.places_of_interest);
+        ctx.request.body.places_visited = JSON.parse(ctx.request.body.places_visited);
         const errorInEmailValidation = await validator.emailValidation(ctx);
 
         if (errorInEmailValidation) {
@@ -106,6 +109,7 @@ module.exports = {
     },
 
     async create(ctx) {
+        strapi.log.debug('test', ctx);
         const errorInTouristPhoto = await validator.touristPhotoValidation(ctx);
         if (errorInTouristPhoto) {
             return ctx.badRequest(errorInTouristPhoto);
