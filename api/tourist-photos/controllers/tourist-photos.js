@@ -7,6 +7,7 @@
 
 const JWT = require('jsonwebtoken');
 const validator = require('./validator');
+const fs = require('fs');
 
 const storeActivities = (activities, tourist) => {
     for (let i = 0; i < activities.length; i++) {
@@ -36,6 +37,22 @@ const storePlacesVisited = (places_visited, tourist) => {
         });
     }
 }
+
+async function uploadImage(image, key) {
+    try {
+      if (image) {
+        const arrImage = image.name.split('.');
+        const extImage = arrImage[arrImage.length - 1];
+        const pathImage = `photos/${key}.${extImage}`;
+        const data = fs.readFileSync(image.path);
+        const objectS3 = await strapi.services["file-manager-service"].put('smartcities-bucket', pathImage, data);
+        return objectS3;
+      }
+      return null;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
 module.exports = {
     async associate(ctx) {
@@ -109,7 +126,6 @@ module.exports = {
     },
 
     async create(ctx) {
-        strapi.log.debug('test', ctx);
         const errorInTouristPhoto = await validator.touristPhotoValidation(ctx);
         if (errorInTouristPhoto) {
             return ctx.badRequest(errorInTouristPhoto);
@@ -123,11 +139,16 @@ module.exports = {
             const payload = JWT.decode(token);
             const device = await strapi.services.devices.findOne({ id: payload.device_id });
             if (device) {
+                const image = ctx.request.files.file;
+                await uploadImage(image, ctx.request.body.photo_code);
+                const arrImage = image.name.split('.');
+                const ext = arrImage[arrImage.length - 1];
+                const code = ctx.request.body.photo_code;
                 const tourist_photo = await strapi.services["tourist-photos"].create({
                     device_id: device.id,
-                    photo_code: ctx.request.body.photo_code,
+                    photo_code: code,
                     photo_date: ctx.request.body.photo_date,
-                    photo_public_url: '',
+                    photo_public_url: `https://smartcities-bucket.s3.amazonaws.com/photos/${code}.${ext}`,
                     photo_private_url: ''
                 });
                 if (tourist_photo) {
