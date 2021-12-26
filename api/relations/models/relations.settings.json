@@ -17,8 +17,8 @@
       "required": true
     },
     "travel_companions": {
-      "autoPopulate": false,
       "via": "relation_id",
+      "autoPopulate": false,
       "collection": "travel-companions"
     }
   }

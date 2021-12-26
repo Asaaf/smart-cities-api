@@ -2,12 +2,13 @@
   "kind": "collectionType",
   "collectionName": "travel_modes",
   "info": {
-    "name": "Travel Modes"
+    "name": "Travel Modes",
+    "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {

@@ -142,9 +142,6 @@
                 "companions": {
                   "type": "integer"
                 },
-                "published_at": {
-                  "type": "string"
-                },
                 "created_by": {
                   "type": "string"
                 },
