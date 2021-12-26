@@ -7,6 +7,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "GET",
+      "path": "/travel-modes/tourists",
+      "handler": "travel-modes.tourists",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
