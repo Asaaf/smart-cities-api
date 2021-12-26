@@ -7,6 +7,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "GET",
+      "path": "/activites/tourists",
+      "handler": "activities.tourists",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
