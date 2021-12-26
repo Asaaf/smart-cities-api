@@ -10,8 +10,8 @@
     },
     {
       "method": "GET",
-      "path": "/visits/:id",
-      "handler": "visits.findOne",
+      "path": "/visits/cities",
+      "handler": "visits.cities",
       "config": {
         "policies": []
       }

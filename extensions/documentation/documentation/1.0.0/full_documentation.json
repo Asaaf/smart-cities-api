@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/25/2021 8:05:13 PM"
+    "x-generation-date": "12/25/2021 8:32:58 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3918,17 +3918,21 @@
         }
       }
     },
-    "/visits/{id}": {
+    "/visits/cities": {
       "get": {
         "deprecated": false,
-        "description": "Find one visits record",
+        "description": "",
         "responses": {
           "200": {
             "description": "Retrieve visits document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Visits"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -3968,18 +3972,7 @@
         "tags": [
           "Visits"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     },
     "/email/": {

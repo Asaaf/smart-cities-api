@@ -254,17 +254,21 @@
         }
       }
     },
-    "/visits/{id}": {
+    "/visits/cities": {
       "get": {
         "deprecated": false,
-        "description": "Find one visits record",
+        "description": "",
         "responses": {
           "200": {
             "description": "Retrieve visits document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Visits"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -304,18 +308,7 @@
         "tags": [
           "Visits"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     }
   },
