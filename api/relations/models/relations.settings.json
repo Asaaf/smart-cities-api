@@ -2,12 +2,13 @@
   "kind": "collectionType",
   "collectionName": "relations",
   "info": {
-    "name": "Relations"
+    "name": "Relations",
+    "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -16,8 +17,8 @@
       "required": true
     },
     "travel_companions": {
-      "via": "relation_id",
       "autoPopulate": false,
+      "via": "relation_id",
       "collection": "travel-companions"
     }
   }

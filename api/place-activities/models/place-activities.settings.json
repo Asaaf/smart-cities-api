@@ -12,8 +12,8 @@
   "pluginOptions": {},
   "attributes": {
     "activity_id": {
-      "model": "activities",
-      "via": "place_activities"
+      "via": "place_activities",
+      "model": "activities"
     },
     "place_id": {
       "via": "place_activities",
