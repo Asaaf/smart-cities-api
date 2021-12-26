@@ -10,6 +10,30 @@ const validator = require('./validator');
 
 module.exports = {
 
+  async devicesAndforms(ctx) {
+    const controlVisits = await strapi.connections.default.raw(
+      `SELECT CAST(DATE(date_count) AS CHAR) AS date, SUM(count) AS total
+      FROM control_visits
+      WHERE DATE(date_count) >= CAST(DATE_FORMAT(NOW() ,'%Y-%m-01') as DATE)
+      AND DATE (date_count) <= LAST_DAY(now())
+      GROUP BY date;`
+    );
+
+    const formRecords = await strapi.connections.default.raw(
+      `SELECT CAST(DATE(photo_date) AS CHAR) AS date, count(id) AS total
+      FROM tourist_photos
+      WHERE DATE(photo_date) >= CAST(DATE_FORMAT(NOW() ,'%Y-%m-01') as DATE)
+      AND DATE (photo_date) <= LAST_DAY(now())
+      AND visit_id IS NOT NULL
+      GROUP BY date;`
+    );
+    const resulset = {
+      devices: controlVisits[0],
+      forms: formRecords[0],
+    }
+    return resulset;
+  },
+
   async create(ctx) {
     const errorInControlVisit = await validator.controlVisitValidation(ctx);
     if(errorInControlVisit) {
