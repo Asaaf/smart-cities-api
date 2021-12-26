@@ -8,13 +8,13 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "tourist_photos": {
-      "via": "device_id",
       "autoPopulate": false,
+      "via": "device_id",
       "collection": "tourist-photos"
     },
     "control_visits": {

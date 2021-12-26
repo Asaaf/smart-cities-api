@@ -25,8 +25,8 @@
       "model": "tourists"
     },
     "place_id": {
-      "model": "places",
-      "via": "tourist_places"
+      "via": "tourist_places",
+      "model": "places"
     }
   }
 }

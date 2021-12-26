@@ -168,9 +168,6 @@
               "serial": {
                 "type": "string"
               },
-              "published_at": {
-                "type": "string"
-              },
               "created_by": {
                 "type": "string"
               },
@@ -178,10 +175,6 @@
                 "type": "string"
               }
             }
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           }
         }
       },
@@ -200,10 +193,6 @@
           },
           "device_id": {
             "type": "string"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           },
           "created_by": {
             "type": "string"

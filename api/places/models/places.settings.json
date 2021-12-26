@@ -8,7 +8,7 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -23,8 +23,8 @@
       "type": "float"
     },
     "place_activities": {
-      "via": "place_id",
       "autoPopulate": false,
+      "via": "place_id",
       "collection": "place-activities"
     },
     "city_id": {
@@ -32,8 +32,8 @@
       "via": "places"
     },
     "tourist_places": {
-      "via": "place_id",
       "autoPopulate": false,
+      "via": "place_id",
       "collection": "tourist-places"
     }
   }

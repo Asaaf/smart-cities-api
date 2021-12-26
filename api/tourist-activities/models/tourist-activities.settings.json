@@ -13,8 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "activity_id": {
-      "model": "activities",
-      "via": "tourist_activities"
+      "via": "tourist_activities",
+      "model": "activities"
     },
     "tourist_id": {
       "via": "tourist_activities",

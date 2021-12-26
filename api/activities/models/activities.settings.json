@@ -2,12 +2,13 @@
   "kind": "collectionType",
   "collectionName": "activities",
   "info": {
-    "name": "activities"
+    "name": "activities",
+    "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -16,13 +17,13 @@
       "required": true
     },
     "tourist_activities": {
-      "via": "activity_id",
       "autoPopulate": false,
+      "via": "activity_id",
       "collection": "tourist-activities"
     },
     "place_activities": {
-      "via": "activity_id",
       "autoPopulate": false,
+      "via": "activity_id",
       "collection": "place-activities"
     }
   }

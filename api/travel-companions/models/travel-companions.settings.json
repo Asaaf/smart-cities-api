@@ -36,8 +36,8 @@
       "required": true
     },
     "relation_id": {
-      "model": "relations",
-      "via": "travel_companions"
+      "via": "travel_companions",
+      "model": "relations"
     },
     "visit_id": {
       "via": "travel_companions",
