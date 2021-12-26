@@ -477,9 +477,6 @@
               "companions": {
                 "type": "integer"
               },
-              "published_at": {
-                "type": "string"
-              },
               "created_by": {
                 "type": "string"
               },
@@ -487,10 +484,6 @@
                 "type": "string"
               }
             }
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           }
         }
       },
@@ -527,10 +520,6 @@
           },
           "visit_id": {
             "type": "string"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           },
           "created_by": {
             "type": "string"
