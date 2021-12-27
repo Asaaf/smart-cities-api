@@ -132,6 +132,8 @@ module.exports = {
         });
 
         await strapi.services['tourist-photos'].update({ id: touristPhoto.id }, { visit_id: visit.id });
+        
+        await strapi.services["mailer-service"].send(email, touristPhoto.photo_public_url);
 
         touristPhoto.tourist_id = tourist.id;
         tourist.visit = visit;
