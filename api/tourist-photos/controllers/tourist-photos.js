@@ -106,7 +106,7 @@ module.exports = {
                 lastname: lastname || '',
                 birth_date,
                 gender: gender || '',
-                city_id
+                city_id: city_id ? city_id : null
             });
 
             if (activities) {
@@ -131,7 +131,6 @@ module.exports = {
             companions,
         });
 
-        console.log('xxx', {  id: touristPhoto.id, visit_id: visit.id });
         await strapi.services['tourist-photos'].update({ id: touristPhoto.id }, { visit_id: visit.id });
 
         touristPhoto.tourist_id = tourist.id;
