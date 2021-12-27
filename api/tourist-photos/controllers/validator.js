@@ -25,10 +25,17 @@ const emailValidation = async (ctx) => {
     return validation;
 };
 
+const photoCodeValidation = async (ctx) => {
+    const rules = {
+        tourist_photo_code: Joi.string().guid({ version: [ 'uuidv4' ] }).required(),
+    }
+    const validation = await _validate(ctx.request.body, rules);
+    return validation;
+};
+
 const visitValidation = async (ctx) => {
     const rules = {
         companions: Joi.number().integer().required(),
-        tourist_photo_code: Joi.string().guid({ version: [ 'uuidv4' ] }).required(),
         city_id_to_visit: Joi.number().integer().required(),
         travel_mode_id: Joi.number().integer(),
         start_date: Joi.date().format('YYYY-MM-DD'),
@@ -66,6 +73,7 @@ const touristPhotoValidation = async (ctx) => {
 
 module.exports = {
     emailValidation,
+    photoCodeValidation,
     visitValidation,
     registerValidation,
     touristPhotoValidation,
