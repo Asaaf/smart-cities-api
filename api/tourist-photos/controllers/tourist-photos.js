@@ -56,6 +56,24 @@ async function uploadImage(image, key) {
 
 module.exports = {
     async associate(ctx) {
+        const errorInPhotoCodeValidation = await validator.photoCodeValidation(ctx);
+       
+        if (errorInPhotoCodeValidation) {
+            return ctx.badRequest(errorInPhotoCodeValidation);
+        }
+
+        const { tourist_photo_code } = ctx.request.body;
+
+        const touristPhoto = await strapi.services['tourist-photos'].findOne({ photo_code: tourist_photo_code });
+
+        if (!touristPhoto) {
+            return ctx.badRequest('the photo code does not exists');
+        }
+
+        if (touristPhoto.visit_id !== null) {
+            return ctx.badRequest('the photo is already associated with a tourist');
+        }
+
         ctx.request.body.activities = typeof ctx.request.body.activities === 'string' ? JSON.parse(ctx.request.body.activities) : ctx.request.body.activities;
         ctx.request.body.places_of_interest = typeof ctx.request.body.places_of_interest === 'string' ? JSON.parse(ctx.request.body.places_of_interest) : ctx.request.body.places_of_interest;
         ctx.request.body.places_visited = typeof ctx.request.body.places_of_interest === 'string' ? JSON.parse(ctx.request.body.places_visited) : ctx.request.body.places_visited;
@@ -71,12 +89,7 @@ module.exports = {
             return ctx.badRequest(errorInVisitValidation);
         }
 
-        const { email, tourist_photo_code } = ctx.request.body;
-        const touristPhoto = await strapi.services['tourist-photos'].findOne({ photo_code: tourist_photo_code });
-
-        if (!touristPhoto) {
-            return ctx.badRequest('the photo code does not exists');
-        }
+        const { email } = ctx.request.body;
 
         let tourist = await strapi.services.tourists.findOne({ email });
 
