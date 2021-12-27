@@ -52,7 +52,7 @@ const registerValidation = async (ctx) => {
         lastname: Joi.string(),
         birth_date: Joi.string().required(),
         gender: Joi.string().valid('M','F','O'),
-        city_id: Joi.number().integer().required(),
+        city_id: Joi.number().integer(),
         activities: Joi.array().items(Joi.number()),
         places_of_interest: Joi.array().items(Joi.number()),
         places_visited: Joi.array().items(Joi.number()),
