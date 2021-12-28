@@ -67,6 +67,8 @@ module.exports = {
 
         const touristPhoto = await strapi.services['tourist-photos'].findOne({ photo_code: tourist_photo_code });
 
+        console.log('touristPhoto', touristPhoto);
+
         if (!touristPhoto) {
             return ctx.badRequest('the photo code does not exists');
         }
@@ -132,11 +134,17 @@ module.exports = {
             companions,
         });
 
-        await strapi.services['tourist-photos'].update({ id: touristPhoto.id }, { visit_id: visit.id });
+        console.log('visit', visit);
+         try {
+            await strapi.services['tourist-photos'].update({ id: touristPhoto.id }, { visit_id: visit.id });
         
-        await strapi.services["mailer-service"].send(email, touristPhoto.photo_public_url);
-
-        touristPhoto.tourist_id = tourist.id;
+            await strapi.services["mailer-service"].send(email, touristPhoto.photo_public_url);
+    
+            touristPhoto.tourist_id = tourist.id;
+         } catch(error) {
+            console.log('errorrrr', error);
+         }
+        
         tourist.visit = visit;
         return tourist;
     },
