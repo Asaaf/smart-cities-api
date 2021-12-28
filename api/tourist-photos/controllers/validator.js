@@ -30,6 +30,7 @@ const photoCodeValidation = async (ctx) => {
         tourist_photo_code: Joi.string().guid({ version: [ 'uuidv4' ] }).required(),
     }
     const validation = await _validate(ctx.request.body, rules);
+    console.log('photo_code_valdiation', validation);
     return validation;
 };
 
@@ -42,6 +43,7 @@ const visitValidation = async (ctx) => {
         end_date: Joi.date().format('YYYY-MM-DD'),
     };
     const validation = await _validate(ctx.request.body, rules);
+    console.log('visit_validation', validation);
     return validation;
 };
 
