@@ -56,7 +56,6 @@ async function uploadImage(image, key) {
 
 module.exports = {
     async associate(ctx) {
-        console.log('xxx', ctx.request.body);
         const errorInPhotoCodeValidation = await validator.photoCodeValidation(ctx);
        
         if (errorInPhotoCodeValidation) {
@@ -66,8 +65,6 @@ module.exports = {
         const { tourist_photo_code } = ctx.request.body;
 
         const touristPhoto = await strapi.services['tourist-photos'].findOne({ photo_code: tourist_photo_code });
-
-        console.log('touristPhoto', touristPhoto);
 
         if (!touristPhoto) {
             return ctx.badRequest('the photo code does not exists');
@@ -134,16 +131,11 @@ module.exports = {
             companions,
         });
 
-        console.log('visit', visit);
-         try {
-            await strapi.services['tourist-photos'].update({ id: touristPhoto.id }, { visit_id: visit.id });
-        
-            await strapi.services["mailer-service"].send(email, touristPhoto.photo_public_url);
+        await strapi.services['tourist-photos'].update({ id: touristPhoto.id }, { visit_id: visit.id });
     
-            touristPhoto.tourist_id = tourist.id;
-         } catch(error) {
-            console.log('errorrrr', error);
-         }
+        await strapi.services["mailer-service"].send(email, touristPhoto.photo_public_url);
+
+        touristPhoto.tourist_id = tourist.id;
         
         tourist.visit = visit;
         return tourist;
