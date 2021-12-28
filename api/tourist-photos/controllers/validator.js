@@ -60,6 +60,7 @@ const registerValidation = async (ctx) => {
         places_visited: Joi.array().items(Joi.number()),
     };
     const validation = await _validate(ctx.request.body, rules);
+    console.log('register_validation', validation);
     return validation;
 };
 
