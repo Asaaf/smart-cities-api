@@ -56,6 +56,7 @@ async function uploadImage(image, key) {
 
 module.exports = {
     async associate(ctx) {
+        console.log('xxx', ctx.request.body);
         const errorInPhotoCodeValidation = await validator.photoCodeValidation(ctx);
        
         if (errorInPhotoCodeValidation) {
