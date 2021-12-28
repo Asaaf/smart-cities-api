@@ -79,7 +79,7 @@ module.exports = {
 
         ctx.request.body.activities = typeof ctx.request.body.activities === 'string' ? JSON.parse(ctx.request.body.activities) : ctx.request.body.activities;
         ctx.request.body.places_of_interest = typeof ctx.request.body.places_of_interest === 'string' ? JSON.parse(ctx.request.body.places_of_interest) : ctx.request.body.places_of_interest;
-        ctx.request.body.places_visited = typeof ctx.request.body.places_of_interest === 'string' ? JSON.parse(ctx.request.body.places_visited) : ctx.request.body.places_visited;
+        ctx.request.body.places_visited = typeof ctx.request.body.places_visited === 'string' ? JSON.parse(ctx.request.body.places_visited) : ctx.request.body.places_visited;
         const errorInEmailValidation = await validator.emailValidation(ctx);
 
         if (errorInEmailValidation) {
