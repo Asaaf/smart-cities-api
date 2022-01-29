@@ -17,6 +17,7 @@ module.exports = {
       WHERE DATE(date_count) >= CAST(DATE_FORMAT(NOW() ,'%Y-%m-01') as DATE)
       AND DATE (date_count) <= LAST_DAY(now())
       GROUP BY date
+      ORDER BY date_count desc
       LIMIT 10;`
         );
 
@@ -27,6 +28,7 @@ module.exports = {
       AND DATE (photo_date) <= LAST_DAY(now())
       AND visit_id IS NOT NULL
       GROUP BY date
+      ORDER BY photo_date desc
       LIMIT 10;`
         );
         const resulset = {
