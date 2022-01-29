@@ -22,7 +22,7 @@ const storePlacesOfInterest = (places_of_interest, tourist) => {
     for (let i = 0; i < places_of_interest.length; i++) {
         strapi.services['tourist-places'].create({
             tourist_id: tourist.id,
-            activity_id: places_of_interest[i],
+            place_id: places_of_interest[i],
             interested: true,
         });
     }
@@ -32,7 +32,7 @@ const storePlacesVisited = (places_visited, tourist) => {
     for (let i = 0; i < places_visited.length; i++) {
         strapi.services['tourist-places'].create({
             tourist_id: tourist.id,
-            activity_id: places_visited[i],
+            place_id: places_visited[i],
             visited: true,
         });
     }
